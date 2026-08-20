@@ -16,6 +16,7 @@ No Booktrace account is required. The listener's library, notes, and listening h
 - [Audiobook journal](https://booktrace.app/audiobook-journal/)
 - [Audiobook narrator tracker](https://booktrace.app/audiobook-narrator-tracker/)
 - [Press kit](https://booktrace.app/press/)
+- [About Booktrace and its developer](https://booktrace.app/about/)
 - [Privacy policy](https://booktrace.app/privacy.html)
 - [Support](https://booktrace.app/support.html)
 

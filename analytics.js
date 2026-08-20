@@ -79,6 +79,26 @@
     });
   });
 
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('a');
+    if (!link) return;
+    if (link.matches('a[download]')) {
+      track('press_asset_download', {
+        file_url: link.href,
+        file_label: link.textContent.trim().replace(/\s+/g, ' ').slice(0, 100),
+        page_path: window.location.pathname
+      });
+    }
+    if (link.href.startsWith('mailto:')) {
+      track('contact_click', { page_path: window.location.pathname });
+    }
+  });
+
+  document.addEventListener('booktrace:track', (event) => {
+    if (!event.detail?.name) return;
+    track(event.detail.name, event.detail.parameters || {});
+  });
+
   document.addEventListener('input', (event) => {
     if (!event.target.closest('#speed-calculator')) return;
     window.clearTimeout(calculatorTimer);

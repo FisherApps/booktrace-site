@@ -6,6 +6,9 @@
     try {
       await navigator.clipboard.writeText(code.value);
       button.textContent = 'Copied';
+      document.dispatchEvent(new CustomEvent('booktrace:track', {
+        detail: { name: 'embed_code_copied', parameters: { page_path: window.location.pathname } }
+      }));
     } catch {
       code.focus();
       code.select();

@@ -30,20 +30,39 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Booktrace",
-    "url": "https://booktrace.app/",
-    "downloadUrl": "https://apps.apple.com/app/id6800459830",
-    "operatingSystem": "iOS",
-    "applicationCategory": "LifestyleApplication",
-    "description": "An audiobook tracker for iPhone that records listening sessions, chapters, narrators, playback speed, notes, and listening statistics.",
-    "image": "https://booktrace.app/assets/app-icon.png",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "description": "Free download with a three-day trial. Optional subscription available."
-    }
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://booktrace.app/#website",
+        "name": "Booktrace",
+        "url": "https://booktrace.app/"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://booktrace.app/about/#brian-fisher",
+        "name": "Brian Fisher",
+        "url": "https://booktrace.app/about/",
+        "jobTitle": "Founder and developer of Booktrace"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://booktrace.app/#app",
+        "name": "Booktrace",
+        "url": "https://booktrace.app/",
+        "downloadUrl": "https://apps.apple.com/app/id6800459830",
+        "operatingSystem": "iOS",
+        "applicationCategory": "LifestyleApplication",
+        "description": "An audiobook tracker for iPhone that records listening sessions, chapters, narrators, playback speed, notes, and listening statistics.",
+        "image": "https://booktrace.app/assets/app-icon.png",
+        "author": { "@id": "https://booktrace.app/about/#brian-fisher" },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "Free download with a three-day trial. Optional subscription available."
+        }
+      }
+    ]
   }
   </script>
 </head>
@@ -237,6 +256,7 @@
         <a href="audiobook-narrator-tracker/">Narrators</a>
         <a href="track-audiobooks-across-apps/">Track across apps</a>
         <a href="press/">Press kit</a>
+        <a href="about/">About</a>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
         <a href="support.html">Support</a>
