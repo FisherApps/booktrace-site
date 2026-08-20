@@ -1,0 +1,22 @@
+name: Notify IndexNow
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Notify participating search engines
+        env:
+          INDEXNOW_KEY: 5230c842-d130-477b-8c4d-7cc8e614f621
+        run: node .github/scripts/submit-indexnow.mjs

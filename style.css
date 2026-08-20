@@ -455,6 +455,16 @@ a { color: inherit; }
 .calculation-result p { margin: 0 0 6px; color: var(--muted); font-size: 11px; }
 .calculation-result output { display: block; color: var(--amber); font: 600 clamp(37px, 4vw, 52px)/1 var(--utility); letter-spacing: -0.07em; }
 .calculation-result span { display: block; margin-top: 9px; color: var(--soft); font-size: 12px; }
+.embed-offer { border-bottom: 1px solid var(--line); background: #121115; }
+.embed-offer-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; align-items: center; gap: 90px; padding-block: 100px; }
+.embed-offer h2 { margin: 0 0 20px; font: 600 clamp(42px, 5vw, 60px)/1.02 var(--display); letter-spacing: -0.05em; }
+.embed-offer-grid > div:first-child > p:last-child { margin: 0; color: var(--soft); }
+.embed-code-card { display: grid; gap: 12px; padding: 24px; border: 1px solid var(--line); border-radius: 24px; background: var(--night-2); }
+.embed-code-card label { color: var(--muted); font: 700 9px var(--utility); letter-spacing: 0.1em; text-transform: uppercase; }
+.embed-code-card textarea { width: 100%; resize: none; padding: 15px; border: 1px solid var(--line); border-radius: 13px; outline: none; background: var(--panel); color: var(--soft); font: 11px/1.55 var(--utility); }
+.embed-code-card textarea:focus { border-color: var(--mint); box-shadow: 0 0 0 3px rgba(142, 217, 203, 0.12); }
+.embed-code-card .button { justify-self: start; min-height: 45px; border-radius: 13px; cursor: pointer; font: 700 12px var(--body); }
+.embed-code-card > a { color: var(--mint); font-size: 11px; text-decoration: none; }
 .resource-band { border-block: 1px solid var(--line); background: var(--night-2); }
 .resource-grid { display: grid; grid-template-columns: 1fr 0.72fr; align-items: center; gap: 100px; padding-block: 100px; }
 .resource-prose h2, .resource-article h2, .related-resources h2, .resource-faq h2 {
@@ -713,6 +723,7 @@ th, td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; vertica
   .calculator-card { width: min(100%, 560px); }
   .feature-resource-phone { width: 290px; }
   .resource-grid { grid-template-columns: 1fr; gap: 50px; }
+  .embed-offer-grid { grid-template-columns: 1fr; gap: 45px; }
   .resource-feature { grid-template-columns: 1fr; gap: 60px; min-height: 0; }
   .article-intro { grid-template-columns: 1fr; gap: 15px; }
   .benefit-grid { grid-template-columns: 1fr; }
@@ -793,6 +804,9 @@ th, td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; vertica
   .speed-presets { grid-template-columns: repeat(5, minmax(0, 1fr)); }
   .speed-presets button { font-size: 10px; }
   .calculation-result { padding: 20px; }
+  .embed-offer-grid { padding-block: 78px; }
+  .embed-offer h2 { font-size: 43px; }
+  .embed-code-card { padding: 18px; }
   .resource-grid, .resource-article, .related-resources, .resource-faq { padding-block: 78px; }
   .resource-prose h2, .resource-article h2, .related-resources h2, .resource-faq h2 { font-size: 43px; }
   .resource-feature { padding-block: 80px; }

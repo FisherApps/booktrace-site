@@ -1,0 +1,22 @@
+:root { color-scheme: dark; --night: #161419; --panel: #252229; --bone: #f3efe9; --soft: #b8b1b4; --muted: #8d878c; --amber: #edbd72; --mint: #8ed9cb; --line: rgba(243, 239, 233, 0.12); }
+* { box-sizing: border-box; }
+body { margin: 0; padding: 18px; background: var(--night); color: var(--bone); font: 15px/1.45 "Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+main { max-width: 650px; margin: auto; padding: 25px; border: 1px solid var(--line); border-radius: 24px; background: #1d1a20; box-shadow: 0 24px 65px rgba(0, 0, 0, 0.28); }
+.embed-heading { display: flex; align-items: center; gap: 13px; margin-bottom: 24px; }
+.embed-heading img { width: 42px; height: 42px; padding: 3px; border-radius: 12px; background: var(--night); transform: scale(1.15); }
+h1 { margin: 0; font: 600 25px/1.1 "Iowan Old Style", Baskerville, Georgia, serif; letter-spacing: -0.025em; }
+.embed-heading p { margin: 3px 0 0; color: var(--muted); font-size: 11px; }
+.fields { display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 10px; }
+label > span:first-child { display: block; margin: 0 0 6px; color: var(--muted); font-size: 10px; }
+input { width: 100%; height: 52px; padding: 0 13px; border: 1px solid var(--line); border-radius: 13px; outline: none; background: var(--panel); color: var(--bone); font: 600 19px ui-monospace, "SFMono-Regular", Menlo, monospace; }
+input:focus { border-color: var(--mint); box-shadow: 0 0 0 3px rgba(142, 217, 203, 0.12); }
+.speed-field { position: relative; display: block; }
+.speed-field input { padding-right: 35px; }
+.speed-field b { position: absolute; top: 13px; right: 13px; color: var(--amber); font: 600 18px ui-monospace, monospace; }
+.result { margin-top: 14px; padding: 20px; border-radius: 18px; background: var(--panel); }
+.result span { color: var(--muted); font-size: 10px; }
+.result output { display: block; margin-top: 3px; color: var(--amber); font: 600 clamp(34px, 8vw, 48px)/1 ui-monospace, "SFMono-Regular", Menlo, monospace; letter-spacing: -0.06em; }
+.result p { margin: 8px 0 0; color: var(--soft); font-size: 11px; }
+footer { max-width: 650px; margin: 10px auto 0; color: var(--muted); font-size: 10px; text-align: right; }
+footer a { color: var(--amber); font-weight: 700; text-decoration: none; }
+@media (max-width: 460px) { body { padding: 10px; } main { padding: 18px; border-radius: 19px; } .fields { grid-template-columns: 1fr 1fr; } .fields label:last-child { grid-column: 1 / -1; } }

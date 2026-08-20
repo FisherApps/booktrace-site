@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,follow">
+  <meta name="theme-color" content="#1d1a20">
+  <title>Audiobook Speed Calculator by Booktrace</title>
+  <link rel="icon" href="../../assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="embed.css">
+</head>
+<body>
+  <main>
+    <div class="embed-heading"><img src="../../assets/mark.svg" alt=""><div><h1>Audiobook speed calculator</h1><p>Find your real listening time.</p></div></div>
+    <form id="speed-calculator">
+      <div class="fields">
+        <label><span>Hours</span><input id="hours" type="number" inputmode="numeric" min="0" max="999" value="14"></label>
+        <label><span>Minutes</span><input id="minutes" type="number" inputmode="numeric" min="0" max="59" value="0"></label>
+        <label><span>Speed</span><span class="speed-field"><input id="speed" type="number" inputmode="decimal" min="0.5" max="4" step="0.05" value="1.5"><b>×</b></span></label>
+      </div>
+      <div class="result" aria-live="polite"><span>Actual listening time</span><output id="adjusted-time" for="hours minutes speed">9h 20m</output><p id="time-saved">You save 4h 40m</p></div>
+    </form>
+  </main>
+  <footer>Powered by <a href="https://booktrace.app/audiobook-speed-calculator/" target="_blank" rel="noopener">Booktrace</a></footer>
+  <script src="embed.js"></script>
+</body>
+</html>

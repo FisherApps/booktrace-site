@@ -23,6 +23,31 @@
   <link rel="apple-touch-icon" href="../assets/app-icon.png">
   <link rel="stylesheet" href="../style.css">
   <script src="/analytics.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Audiobook Speed Calculator",
+        "url": "https://booktrace.app/audiobook-speed-calculator/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "description": "Calculate actual audiobook listening time and time saved at any playback speed.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How long does a 10-hour audiobook take at 1.5x?", "acceptedAnswer": { "@type": "Answer", "text": "Six hours and 40 minutes. Divide 10 hours by 1.5." } },
+          { "@type": "Question", "name": "How much time does 2x speed save?", "acceptedAnswer": { "@type": "Answer", "text": "It cuts the listening time in half. A 12-hour audiobook takes 6 hours at 2x." } },
+          { "@type": "Question", "name": "Does 1.5x mean 50% less time?", "acceptedAnswer": { "@type": "Answer", "text": "No. It is 50% faster, which reduces the time by one third. A 9-hour book takes 6 hours." } },
+          { "@type": "Question", "name": "Can I use a custom audiobook speed?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Enter any speed from 0.5x through 4x, including values such as 1.35x or 1.8x." } }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="home resource-page calculator-page">
   <a class="skip-link" href="#main">Skip to calculator</a>
@@ -98,6 +123,13 @@
       </div>
     </section>
 
+    <section class="embed-offer">
+      <div class="shell embed-offer-grid">
+        <div><p class="eyebrow mint">Free for other websites</p><h2>Put this calculator on your own page.</h2><p>Book bloggers, audiobook clubs, libraries, and reading-resource sites can embed the calculator at no cost. It stays responsive and does not load Booktrace analytics inside the embed.</p></div>
+        <div class="embed-code-card"><label for="embed-code">Copy and paste this HTML</label><textarea id="embed-code" readonly rows="5">&lt;iframe src=&quot;https://booktrace.app/audiobook-speed-calculator/embed/&quot; title=&quot;Audiobook speed calculator by Booktrace&quot; width=&quot;100%&quot; height=&quot;500&quot; style=&quot;border:0;max-width:700px&quot; loading=&quot;lazy&quot;&gt;&lt;/iframe&gt;</textarea><button class="button button-primary" id="copy-embed-code" type="button">Copy embed code</button><a href="embed/" target="_blank" rel="noopener">Preview the embeddable calculator ↗</a></div>
+      </div>
+    </section>
+
     <section class="resource-feature shell">
       <div class="resource-feature-copy">
         <p class="eyebrow lilac">Beyond one calculation</p>
@@ -132,5 +164,6 @@
     </div>
   </footer>
   <script src="calculator.js" defer></script>
+  <script src="embed-code.js" defer></script>
 </body>
 </html>
