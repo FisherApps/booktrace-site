@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#161419">
+  <title>Audiobook Speed Calculator — Listening Time at Any Speed</title>
+  <meta name="description" content="Calculate exactly how long an audiobook will take at 1.25x, 1.5x, 1.75x, 2x, or any playback speed. See adjusted listening time and time saved.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://booktrace.app/audiobook-speed-calculator/">
+  <meta name="apple-itunes-app" content="app-id=6800459830, app-argument=https://booktrace.app/audiobook-speed-calculator/">
+  <meta property="og:site_name" content="Booktrace">
+  <meta property="og:title" content="Free Audiobook Speed Calculator | Booktrace">
+  <meta property="og:description" content="Enter an audiobook's length and playback speed to see your real listening time and time saved.">
+  <meta property="og:url" content="https://booktrace.app/audiobook-speed-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://booktrace.app/assets/og-booktrace.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Audiobook Speed Calculator | Booktrace">
+  <meta name="twitter:description" content="Calculate audiobook listening time at any playback speed.">
+  <meta name="twitter:image" content="https://booktrace.app/assets/og-booktrace.png">
+  <link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/app-icon.png">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="home resource-page calculator-page">
+  <a class="skip-link" href="#main">Skip to calculator</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../" aria-label="Booktrace home"><span class="brand-mark" aria-hidden="true"><img src="../assets/mark.svg" alt=""></span><span>Booktrace</span></a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="../#why-booktrace">Why Booktrace</a>
+        <a href="../audiobook-listening-stats/">Listening stats</a>
+        <a href="../audiobook-journal/">Journal</a>
+      </nav>
+      <a class="button button-small header-cta" href="https://apps.apple.com/app/id6800459830">Download</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="resource-hero shell calculator-hero">
+      <div class="resource-copy">
+        <p class="breadcrumbs"><a href="../">Booktrace</a><span>/</span>Speed calculator</p>
+        <p class="eyebrow amber">Free listening tool</p>
+        <h1>Audiobook speed calculator</h1>
+        <p class="resource-lede">Enter the book’s full runtime and your playback speed. We’ll calculate your actual listening time and exactly how much time you save.</p>
+      </div>
+
+      <form class="calculator-card" id="speed-calculator">
+        <fieldset>
+          <legend>Audiobook length</legend>
+          <div class="duration-inputs">
+            <label><span>Hours</span><input id="hours" name="hours" type="number" inputmode="numeric" min="0" max="999" value="14"></label>
+            <label><span>Minutes</span><input id="minutes" name="minutes" type="number" inputmode="numeric" min="0" max="59" value="0"></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Playback speed</legend>
+          <label class="speed-input"><input id="speed" name="speed" type="number" inputmode="decimal" min="0.5" max="4" step="0.05" value="1.5"><span>×</span></label>
+          <div class="speed-presets" aria-label="Common playback speeds">
+            <button type="button" data-speed="1">1×</button>
+            <button type="button" data-speed="1.25">1.25×</button>
+            <button type="button" data-speed="1.5" class="active">1.5×</button>
+            <button type="button" data-speed="1.75">1.75×</button>
+            <button type="button" data-speed="2">2×</button>
+          </div>
+        </fieldset>
+        <div class="calculation-result" aria-live="polite">
+          <p>Actual listening time</p>
+          <output id="adjusted-time" for="hours minutes speed">9h 20m</output>
+          <span id="time-saved">You save 4h 40m</span>
+        </div>
+      </form>
+    </section>
+
+    <section class="resource-band">
+      <div class="shell resource-grid">
+        <article class="resource-prose">
+          <p class="eyebrow mint">The simple formula</p>
+          <h2>Original length ÷ playback speed</h2>
+          <p>A 14-hour audiobook played at 1.5× takes 9 hours and 20 minutes. At 2×, it takes 7 hours. The calculator handles the hours and minutes for you, including less tidy runtimes and custom speeds.</p>
+          <p>Playback speed changes how long you spend listening; it does not change the audiobook’s published runtime. Keeping those numbers separate is useful when you want an honest record of both the story and your own time.</p>
+        </article>
+        <div class="speed-table-wrap">
+          <table class="speed-table">
+            <caption>Listening time for this audiobook</caption>
+            <thead><tr><th>Speed</th><th>Listening time</th></tr></thead>
+            <tbody>
+              <tr><td>1×</td><td data-table-speed="1">14h</td></tr>
+              <tr><td>1.25×</td><td data-table-speed="1.25">11h 12m</td></tr>
+              <tr><td>1.5×</td><td data-table-speed="1.5">9h 20m</td></tr>
+              <tr><td>1.75×</td><td data-table-speed="1.75">8h</td></tr>
+              <tr><td>2×</td><td data-table-speed="2">7h</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="resource-feature shell">
+      <div class="resource-feature-copy">
+        <p class="eyebrow lilac">Beyond one calculation</p>
+        <h2>Keep the time attached to the book.</h2>
+        <p>Booktrace remembers the speed you actually use, records individual listening sessions, keeps your chapter, and shows both book time and your time. It turns a quick calculation into a listening history you can return to.</p>
+        <ul class="clean-list">
+          <li><span>Speed-aware sessions</span> for every audiobook</li>
+          <li><span>Time remaining</span> at your own pace</li>
+          <li><span>Listening stats</span> across days, months, and books</li>
+        </ul>
+        <a class="button button-primary resource-cta" href="https://apps.apple.com/app/id6800459830">Try Booktrace free</a>
+      </div>
+      <div class="resource-phone phone"><img src="../assets/book-detail.webp" width="1320" height="2868" loading="lazy" alt="Booktrace showing an audiobook's length, listening time at the chosen speed, chapter progress, and session history"></div>
+    </section>
+
+    <section class="resource-faq shell">
+      <p class="eyebrow amber">Common questions</p>
+      <h2>Audiobook playback speed, explained</h2>
+      <div class="faq-grid">
+        <article><h3>How long does a 10-hour audiobook take at 1.5×?</h3><p>Six hours and 40 minutes. Divide 10 hours by 1.5.</p></article>
+        <article><h3>How much time does 2× speed save?</h3><p>It cuts the listening time in half. A 12-hour audiobook takes 6 hours at 2×.</p></article>
+        <article><h3>Does 1.5× mean 50% less time?</h3><p>No. It is 50% faster, which reduces the time by one third. A 9-hour book takes 6 hours.</p></article>
+        <article><h3>Can I use a custom speed?</h3><p>Yes. Enter any speed from 0.5× through 4×, including values such as 1.35× or 1.8×.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div><a class="brand" href="../"><span class="brand-mark" aria-hidden="true"><img src="../assets/mark.svg" alt=""></span><span>Booktrace</span></a><p>Built for hours, not pages.</p></div>
+      <nav aria-label="Footer navigation"><a href="../audiobook-listening-stats/">Listening stats</a><a href="../audiobook-journal/">Journal</a><a href="../audiobook-narrator-tracker/">Narrators</a><a href="../privacy.html">Privacy</a><a href="../support.html">Support</a></nav>
+    </div>
+  </footer>
+  <script src="calculator.js" defer></script>
+</body>
+</html>
