@@ -182,12 +182,12 @@ a { color: inherit; }
 }
 .phone img { display: block; width: 100%; height: auto; }
 .phone-hero { width: 322px; position: relative; z-index: 2; transform: rotate(1.6deg); }
-.time-card {
+.place-card {
   position: absolute;
   right: 2px;
   bottom: 46px;
   z-index: 5;
-  min-width: 276px;
+  min-width: 244px;
   padding: 15px 17px 14px;
   border: 1px solid var(--line);
   border-radius: 18px;
@@ -196,13 +196,10 @@ a { color: inherit; }
   -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
 }
-.time-card p { margin: 0 0 7px; color: var(--muted); font: 700 9px/1 var(--utility); letter-spacing: 0.12em; text-transform: uppercase; }
-.time-card div { display: flex; align-items: baseline; gap: 11px; font: 600 20px/1 var(--utility); }
-.time-card div span { color: var(--soft); text-decoration: line-through; text-decoration-thickness: 1px; }
-.time-card div i { color: var(--muted); font-style: normal; font-size: 15px; }
-.time-card div strong { color: var(--amber); font-size: 24px; }
-.time-card small { display: block; margin-top: 9px; color: var(--muted); font-size: 9px; }
-.time-card small b { margin: 0 4px; color: var(--amber); }
+.place-card p { margin: 0 0 5px; color: var(--muted); font: 700 9px/1 var(--utility); letter-spacing: 0.12em; text-transform: uppercase; }
+.place-card strong { display: block; color: var(--bone); font: 600 18px/1.25 var(--display); }
+.place-card small { display: flex; align-items: center; gap: 6px; margin-top: 9px; color: var(--muted); font-size: 9px; }
+.place-card small i { width: 6px; height: 6px; border-radius: 50%; background: var(--amber); box-shadow: 0 0 0 4px rgba(237, 189, 114, 0.1); }
 
 .difference { border-block: 1px solid var(--line); background: var(--night-2); padding-block: 106px; }
 .compact-intro { display: grid; grid-template-columns: 1fr 1.5fr; align-items: end; gap: 40px; margin-bottom: 46px; }
@@ -222,6 +219,7 @@ a { color: inherit; }
 }
 .chapters { color: var(--lilac); }
 .chapters small { margin-left: 2px; color: var(--muted); font-size: 14px; }
+.pace { color: var(--amber); }
 .waveform { gap: 5px; color: var(--mint); }
 .waveform i { display: block; width: 4px; height: 22px; border-radius: 10px; background: currentColor; }
 .waveform i:nth-child(2), .waveform i:nth-child(4) { height: 42px; }
@@ -294,7 +292,7 @@ a { color: inherit; }
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
   transform: rotate(-5deg);
 }
-.shelf-peek img { width: 100%; height: auto; }
+.shelf-peek img { width: 100%; height: auto; transform: translateY(-12%); }
 .stat-callout { display: flex; align-items: center; gap: 18px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line); }
 .stat-callout > span { color: var(--lilac); font: 600 32px/1 var(--utility); letter-spacing: -0.07em; }
 .stat-callout p { margin: 0; color: var(--bone); font-size: 12px; line-height: 1.45; }
@@ -389,7 +387,7 @@ th, td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; vertica
   .hero h1 { max-width: 700px; margin-inline: auto; font-size: clamp(50px, 10vw, 74px); }
   .hero-lede { margin-inline: auto; }
   .hero-product { min-height: 710px; }
-  .time-card { right: calc(50% - 255px); }
+  .place-card { right: calc(50% - 255px); }
   .compact-intro { grid-template-columns: 1fr; gap: 12px; }
   .difference-grid { grid-template-columns: 1fr; }
   .difference-grid article, .difference-grid article + article { min-height: 0; padding: 28px 0; border-right: 0; border-bottom: 1px solid var(--line); }
@@ -430,7 +428,7 @@ th, td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; vertica
   .orbit-two { width: 330px; height: 330px; }
   .phone { border-radius: 46px; box-shadow: 0 32px 65px rgba(0, 0, 0, 0.48), 0 0 0 5px #2a272e; }
   .phone-hero { width: min(76vw, 316px); transform: rotate(0.8deg); }
-  .time-card { right: 10px; bottom: 32px; min-width: 248px; transform: scale(0.94); transform-origin: right bottom; }
+  .place-card { right: 10px; bottom: 32px; min-width: 226px; transform: scale(0.94); transform-origin: right bottom; }
   .difference { padding-block: 78px; }
   .section-intro h2 { font-size: 45px; }
   .difference-grid { margin-top: 32px; }
@@ -469,14 +467,14 @@ th, td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; vertica
   .hero h1 { font-size: 43px; }
   .hero-product { min-height: 575px; }
   .phone-hero { width: 270px; }
-  .time-card { bottom: 20px; right: 0; }
+  .place-card { bottom: 20px; right: 0; }
   .product-composition { transform: scale(0.91); transform-origin: top center; margin-bottom: -50px; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .hero-copy { animation: hero-in 700ms cubic-bezier(0.2, 0.7, 0.2, 1) both; }
   .phone-hero { animation: phone-in 850ms 120ms cubic-bezier(0.2, 0.7, 0.2, 1) both; }
-  .time-card { animation: card-in 700ms 420ms cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+  .place-card { animation: card-in 700ms 420ms cubic-bezier(0.2, 0.7, 0.2, 1) both; }
   .waveform i { animation: wave 1.8s ease-in-out infinite; transform-origin: center; }
   .waveform i:nth-child(2) { animation-delay: -0.3s; }
   .waveform i:nth-child(3) { animation-delay: -0.65s; }
