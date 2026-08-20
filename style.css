@@ -352,6 +352,41 @@ a { color: inherit; }
 .footer-inner { display: flex; align-items: flex-start; gap: 32px; padding-block: 36px 50px; }
 .footer-inner > div p { margin: 7px 0 0; color: var(--muted); font-size: 11px; }
 .site-footer nav { display: flex; flex-wrap: wrap; gap: 24px; margin-left: auto; }
+.analytics-consent {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 100;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 22px;
+  width: min(650px, calc(100% - 36px));
+  padding: 18px 18px 18px 21px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(37, 34, 41, 0.97);
+  color: var(--bone);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.48);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+.analytics-consent strong { display: block; margin-bottom: 3px; font-size: 13px; }
+.analytics-consent p { margin: 0; color: var(--soft); font-size: 11px; line-height: 1.45; }
+.analytics-consent-actions { display: flex; gap: 8px; }
+.analytics-consent button {
+  min-height: 39px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: transparent;
+  color: var(--soft);
+  cursor: pointer;
+  font: 650 11px var(--body);
+  white-space: nowrap;
+}
+.analytics-consent button.allow { border-color: transparent; background: var(--amber); color: var(--night); }
+.analytics-consent button:focus-visible { outline: 3px solid var(--mint); outline-offset: 2px; }
 
 /* Search resources */
 .resource-page { background: var(--night); color: var(--bone); }
@@ -602,6 +637,9 @@ th, td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; vertica
   .closing h2 { font-size: 47px; }
   .footer-inner { flex-direction: column; }
   .site-footer nav { margin-left: 0; }
+  .analytics-consent { right: 12px; bottom: 12px; grid-template-columns: 1fr; gap: 13px; width: calc(100% - 24px); padding: 16px; }
+  .analytics-consent-actions { justify-content: stretch; }
+  .analytics-consent button { flex: 1; }
   .resource-hero, .feature-resource-hero { padding-block: 58px 82px; }
   .breadcrumbs { margin-bottom: 32px; }
   .resource-copy h1 { font-size: 47px; }
