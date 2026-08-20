@@ -455,6 +455,14 @@ a { color: inherit; }
 .calculation-result p { margin: 0 0 6px; color: var(--muted); font-size: 11px; }
 .calculation-result output { display: block; color: var(--amber); font: 600 clamp(37px, 4vw, 52px)/1 var(--utility); letter-spacing: -0.07em; }
 .calculation-result span { display: block; margin-top: 9px; color: var(--soft); font-size: 12px; }
+.goal-hero { grid-template-columns: minmax(0, 1fr) minmax(430px, 0.82fr); }
+.goal-card { transform: rotate(-1deg); }
+.goal-options { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding: 24px 0; border-top: 1px solid var(--line); }
+.goal-options label > span:first-child { display: block; margin-bottom: 7px; color: var(--muted); font-size: 11px; }
+.goal-options .speed-input b { position: absolute; top: 14px; right: 18px; color: var(--lilac); font: 600 22px var(--utility); }
+.goal-result output { color: var(--lilac); }
+.goal-rhythm { display: flex; align-items: end; gap: 8px; height: 270px; padding: 28px; border: 1px solid var(--line); border-radius: 24px; background: var(--panel); }
+.goal-rhythm span { flex: 1; height: var(--h); min-width: 5px; border-radius: 7px 7px 3px 3px; background: linear-gradient(180deg, var(--lilac), rgba(191, 173, 229, 0.35)); }
 .embed-offer { border-bottom: 1px solid var(--line); background: #121115; }
 .embed-offer-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; align-items: center; gap: 90px; padding-block: 100px; }
 .embed-offer h2 { margin: 0 0 20px; font: 600 clamp(42px, 5vw, 60px)/1.02 var(--display); letter-spacing: -0.05em; }
@@ -743,6 +751,8 @@ th, td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; vertica
   .widget-crop { width: min(100%, 600px); margin-inline: auto; }
   .trust { grid-template-columns: 1fr; gap: 28px; padding-block: 95px; }
   .resource-hero, .feature-resource-hero { grid-template-columns: 1fr; gap: 60px; min-height: 0; padding-block: 80px 100px; }
+  .goal-hero { grid-template-columns: 1fr; }
+  .goal-card { transform: none; }
   .calculator-card { width: min(100%, 560px); }
   .feature-resource-phone { width: 290px; }
   .resource-grid { grid-template-columns: 1fr; gap: 50px; }
@@ -827,6 +837,8 @@ th, td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; vertica
   .resource-copy h1 { font-size: 47px; }
   .resource-lede { margin-top: 22px; font-size: 16px; }
   .calculator-card { padding: 20px; border-radius: 22px; }
+  .goal-options { grid-template-columns: 1fr 1fr; }
+  .goal-rhythm { height: 220px; padding: 20px; gap: 5px; }
   .speed-presets { grid-template-columns: repeat(5, minmax(0, 1fr)); }
   .speed-presets button { font-size: 10px; }
   .calculation-result { padding: 20px; }

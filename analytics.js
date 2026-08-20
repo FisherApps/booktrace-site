@@ -100,9 +100,18 @@
   });
 
   document.addEventListener('input', (event) => {
-    if (!event.target.closest('#speed-calculator')) return;
+    const calculator = event.target.closest('#speed-calculator, #goal-calculator');
+    if (!calculator) return;
     window.clearTimeout(calculatorTimer);
     calculatorTimer = window.setTimeout(() => {
+      if (calculator.id === 'goal-calculator') {
+        track('goal_calculator_used', {
+          audiobook_minutes: Math.round((Number(document.querySelector('#goal-hours')?.value) || 0) * 60 + (Number(document.querySelector('#goal-minutes')?.value) || 0)),
+          playback_speed: Number(document.querySelector('#goal-speed')?.value) || 1,
+          days_to_finish: Number(document.querySelector('#goal-days')?.value) || 1
+        });
+        return;
+      }
       const hours = Number(document.querySelector('#hours')?.value) || 0;
       const minutes = Number(document.querySelector('#minutes')?.value) || 0;
       const speed = Number(document.querySelector('#speed')?.value) || 1;

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#161419">
+  <title>Audiobook Goal Calculator | Minutes Per Day to Finish</title>
+  <meta name="description" content="Calculate how many minutes per day you need to listen to finish an audiobook on time, adjusted for your playback speed.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://booktrace.app/audiobook-goal-calculator/">
+  <meta name="apple-itunes-app" content="app-id=6800459830, app-argument=https://booktrace.app/audiobook-goal-calculator/">
+  <meta property="og:site_name" content="Booktrace">
+  <meta property="og:title" content="Audiobook Listening Goal Calculator">
+  <meta property="og:description" content="Turn an audiobook's remaining time into a realistic daily listening goal.">
+  <meta property="og:url" content="https://booktrace.app/audiobook-goal-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://booktrace.app/assets/og-booktrace.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/app-icon.png">
+  <link rel="stylesheet" href="../style.css">
+  <script src="/analytics.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Audiobook Goal Calculator",
+        "url": "https://booktrace.app/audiobook-goal-calculator/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "description": "Calculate the daily listening time needed to finish an audiobook within a chosen number of days, adjusted for playback speed.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How do I calculate how much audiobook time to listen each day?", "acceptedAnswer": { "@type": "Answer", "text": "Divide the audiobook's remaining runtime by your playback speed, then divide that listening time by the number of days available." } },
+          { "@type": "Question", "name": "Should an audiobook goal use published time or listening time?", "acceptedAnswer": { "@type": "Answer", "text": "Use speed-adjusted listening time for a daily schedule. Keep published runtime separately when recording the full length of the audiobook." } },
+          { "@type": "Question", "name": "What happens if my playback speed changes?", "acceptedAnswer": { "@type": "Answer", "text": "Recalculate with the new speed. A faster speed lowers the daily minutes needed, while a slower speed increases them." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="home resource-page goal-calculator-page">
+  <a class="skip-link" href="#main">Skip to calculator</a>
+  <header class="site-header"><div class="shell header-inner">
+    <a class="brand" href="../" aria-label="Booktrace home"><span class="brand-mark" aria-hidden="true"><img src="../assets/mark.svg" alt=""></span><span>Booktrace</span></a>
+    <nav class="desktop-nav" aria-label="Primary navigation"><a href="../audiobook-speed-calculator/">Speed calculator</a><a href="../audiobook-listening-stats/">Listening stats</a><a href="../track-audiobooks-across-apps/">Across apps</a></nav>
+    <a class="button button-small header-cta" href="https://apps.apple.com/app/id6800459830">Download</a>
+  </div></header>
+  <main id="main">
+    <section class="resource-hero shell goal-hero">
+      <div class="resource-copy"><p class="breadcrumbs"><a href="../">Booktrace</a><span>/</span>Goal calculator</p><p class="eyebrow lilac">Free listening tool</p><h1>How much should I listen each day?</h1><p class="resource-lede">Enter the audiobook time you have left, your playback speed, and how many days you have. Get a daily goal that fits the way you actually listen.</p></div>
+      <form class="calculator-card goal-card" id="goal-calculator">
+        <fieldset><legend>Audiobook time remaining</legend><div class="duration-inputs"><label><span>Hours</span><input id="goal-hours" type="number" inputmode="numeric" min="0" max="999" value="14"></label><label><span>Minutes</span><input id="goal-minutes" type="number" inputmode="numeric" min="0" max="59" value="0"></label></div></fieldset>
+        <div class="goal-options"><label><span>Playback speed</span><span class="speed-input"><input id="goal-speed" type="number" inputmode="decimal" min="0.5" max="4" step="0.05" value="1.5"><b>×</b></span></label><label><span>Days to finish</span><input id="goal-days" type="number" inputmode="numeric" min="1" max="365" value="14"></label></div>
+        <div class="calculation-result goal-result" aria-live="polite"><p>Listen each day</p><output id="daily-goal" for="goal-hours goal-minutes goal-speed goal-days">40 min</output><span id="goal-summary">9h 20m of listening across 14 days</span></div>
+      </form>
+    </section>
+    <section class="resource-band"><div class="shell resource-grid"><article class="resource-prose"><p class="eyebrow mint">A goal based on your time</p><h2>Remaining runtime ÷ speed ÷ days</h2><p>A 14-hour audiobook at 1.5× takes 9 hours and 20 minutes of actual listening. Spread across 14 days, that is 40 minutes per day.</p><p>This is a planning number, not a streak requirement. Missing one day only means the remaining time gets divided across the days that are left.</p></article><div class="goal-rhythm" aria-label="Fourteen day listening plan"><span style="--h:54%"></span><span style="--h:70%"></span><span style="--h:42%"></span><span style="--h:82%"></span><span style="--h:60%"></span><span style="--h:74%"></span><span style="--h:48%"></span><span style="--h:68%"></span><span style="--h:88%"></span><span style="--h:57%"></span><span style="--h:77%"></span><span style="--h:51%"></span><span style="--h:72%"></span><span style="--h:94%"></span></div></div></section>
+    <section class="resource-feature shell"><div class="resource-feature-copy"><p class="eyebrow amber">Keep the goal with the book</p><h2>Let the plan change as you listen.</h2><p>Booktrace keeps goals beside the audiobook’s chapter, speed, time remaining, and sessions. Your progress updates the story instead of leaving you with a disconnected calendar reminder.</p><ul class="clean-list"><li><span>Time remaining</span> at your playback speed</li><li><span>Listening sessions</span> against the goal</li><li><span>Flexible finish plans</span> that reflect progress</li></ul><a class="button button-primary resource-cta" href="https://apps.apple.com/app/id6800459830">Try Booktrace free</a></div><div class="resource-phone phone"><img src="../assets/home.webp" width="1320" height="2868" loading="lazy" alt="Booktrace home screen showing audiobook progress and listening goals"></div></section>
+    <section class="resource-faq shell"><p class="eyebrow lilac">Planning questions</p><h2>A realistic finish line</h2><div class="faq-grid"><article><h3>How do I calculate daily audiobook time?</h3><p>Divide the remaining runtime by your speed, then divide that listening time by the number of days available.</p></article><article><h3>Should I use published or adjusted time?</h3><p>Use speed-adjusted time for the daily schedule. Keep published runtime separately as the audiobook’s full length.</p></article><article><h3>What if my speed changes?</h3><p>Recalculate with the new speed. Faster playback lowers the daily minutes; slower playback raises them.</p></article><article><h3>What if I miss a day?</h3><p>Enter the new number of remaining days. The calculator will spread the remaining listening time across them.</p></article></div></section>
+    <section class="related-resources shell"><p class="eyebrow mint">More listening tools</p><h2>Keep planning without a spreadsheet.</h2><div class="related-grid"><a href="../audiobook-speed-calculator/"><span>Free calculator</span><strong>Listening time at any speed</strong><p>See actual listening time and time saved.</p></a><a href="../audiobook-listening-stats/"><span>Listening history</span><strong>Stats and cover calendar</strong><p>See the time and stories behind every month.</p></a><a href="../audiobook-journal/"><span>Private record</span><strong>Audiobook journal</strong><p>Keep sessions, notes, quotes, and ratings together.</p></a></div></section>
+  </main>
+  <footer class="site-footer"><div class="shell footer-inner"><div><a class="brand" href="../"><span class="brand-mark" aria-hidden="true"><img src="../assets/mark.svg" alt=""></span><span>Booktrace</span></a><p>Built for hours, not pages.</p></div><nav aria-label="Footer navigation"><a href="../audiobook-speed-calculator/">Speed calculator</a><a href="../about/">About</a><a href="../privacy.html">Privacy</a><a href="../support.html">Support</a></nav></div></footer>
+  <script src="calculator.js" defer></script>
+</body>
+</html>
