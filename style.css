@@ -181,7 +181,7 @@ a { color: inherit; }
   box-shadow: 0 38px 80px rgba(0, 0, 0, 0.48), 0 0 0 7px #2a272e;
 }
 .phone img { display: block; width: 100%; height: auto; }
-.phone-hero { width: 322px; position: relative; z-index: 2; transform: rotate(1.6deg); }
+.phone-hero { width: 322px; position: relative; z-index: 2; }
 .place-card {
   position: absolute;
   right: 2px;
@@ -254,8 +254,8 @@ a { color: inherit; }
 .clean-list li span { color: var(--bone); font-weight: 650; }
 .product-composition { position: relative; min-height: 660px; }
 .composition-time { background: radial-gradient(circle at 45% 42%, rgba(237, 189, 114, 0.14), transparent 54%); }
-.phone-detail { width: 300px; top: 0; left: 55px; z-index: 2; transform: rotate(-2deg); }
-.phone-live { width: 230px; right: 22px; bottom: 0; z-index: 3; border-radius: 45px; transform: rotate(4deg); }
+.phone-detail { width: 300px; top: 0; left: 55px; z-index: 2; }
+.phone-live { width: 230px; right: 22px; bottom: 0; z-index: 3; border-radius: 45px; }
 .session-chip {
   position: absolute;
   right: 0;
@@ -278,7 +278,7 @@ a { color: inherit; }
 
 .habits { border-block: 1px solid var(--line); background: var(--night-2); overflow: hidden; }
 .composition-stats { background: radial-gradient(circle at 55% 45%, rgba(191, 173, 229, 0.15), transparent 56%); }
-.phone-stats { width: 292px; top: 0; right: 72px; z-index: 3; transform: rotate(1.5deg); }
+.phone-stats { width: 292px; top: 0; right: 72px; z-index: 3; }
 .shelf-peek {
   position: absolute;
   left: 0;
@@ -290,7 +290,6 @@ a { color: inherit; }
   border: 1px solid var(--line);
   border-radius: 32px;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
-  transform: rotate(-5deg);
 }
 .shelf-peek img { width: 100%; height: auto; transform: translateY(-12%); }
 .stat-callout { display: flex; align-items: center; gap: 18px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line); }
@@ -427,7 +426,7 @@ th, td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; vertica
   .orbit-one { width: 450px; height: 450px; }
   .orbit-two { width: 330px; height: 330px; }
   .phone { border-radius: 46px; box-shadow: 0 32px 65px rgba(0, 0, 0, 0.48), 0 0 0 5px #2a272e; }
-  .phone-hero { width: min(76vw, 316px); transform: rotate(0.8deg); }
+  .phone-hero { width: min(76vw, 316px); }
   .place-card { right: 10px; bottom: 32px; min-width: 226px; transform: scale(0.94); transform-origin: right bottom; }
   .difference { padding-block: 78px; }
   .section-intro h2 { font-size: 45px; }
@@ -468,7 +467,7 @@ th, td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; vertica
   .hero-product { min-height: 575px; }
   .phone-hero { width: 270px; }
   .place-card { bottom: 20px; right: 0; }
-  .product-composition { transform: scale(0.91); transform-origin: top center; margin-bottom: -50px; }
+  .product-composition { margin-bottom: 0; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -481,7 +480,7 @@ th, td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; vertica
   .waveform i:nth-child(4) { animation-delay: -0.9s; }
   .waveform i:nth-child(5) { animation-delay: -1.2s; }
   @keyframes hero-in { from { opacity: 0; transform: translateY(18px); } }
-  @keyframes phone-in { from { opacity: 0; transform: translateY(30px) rotate(1.6deg); } }
+  @keyframes phone-in { from { opacity: 0; transform: translateY(30px); } }
   @keyframes card-in { from { opacity: 0; transform: translateY(18px); } }
   @keyframes wave { 0%, 100% { transform: scaleY(0.55); } 50% { transform: scaleY(1); } }
 }
