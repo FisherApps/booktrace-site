@@ -409,6 +409,7 @@ a { color: inherit; }
   letter-spacing: -0.055em;
 }
 .resource-lede { max-width: 690px; margin: 28px 0 0; color: var(--soft); font-size: 18px; line-height: 1.66; }
+.calculator-supporting-copy { max-width: 610px; margin-top: 14px; color: var(--muted); font-size: 13px; line-height: 1.55; }
 .resource-cta { margin-top: 34px; }
 .calculator-card {
   position: relative;

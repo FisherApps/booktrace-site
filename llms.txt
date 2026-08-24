@@ -11,6 +11,7 @@ No Booktrace account is required. The listener's library, notes, and listening h
 - [Booktrace home](https://booktrace.app/)
 - [Download on the App Store](https://apps.apple.com/app/id6800459830)
 - [Track audiobooks across apps](https://booktrace.app/track-audiobooks-across-apps/)
+- [Audiobook tools](https://booktrace.app/audiobook-tools/)
 - [Audiobook speed calculator](https://booktrace.app/audiobook-speed-calculator/)
 - [Audiobook listening goal calculator](https://booktrace.app/audiobook-goal-calculator/)
 - [Audiobook listening stats](https://booktrace.app/audiobook-listening-stats/)
