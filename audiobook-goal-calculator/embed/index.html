@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,follow">
+  <meta name="theme-color" content="#1d1a20">
+  <title>Audiobook Listening Goal Calculator by Booktrace</title>
+  <link rel="icon" href="../../assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="embed.css">
+</head>
+<body>
+  <main>
+    <div class="embed-heading"><img src="../../assets/mark.svg" alt="" width="42" height="42"><div><h1>Audiobook goal calculator</h1><p>Find your minutes per day.</p></div></div>
+    <form id="goal-calculator">
+      <div class="fields goal-fields">
+        <label><span>Hours left</span><input id="goal-hours" type="number" inputmode="numeric" min="0" max="999" value="14"></label>
+        <label><span>Minutes</span><input id="goal-minutes" type="number" inputmode="numeric" min="0" max="59" value="0"></label>
+        <label><span>Speed</span><span class="speed-field"><input id="goal-speed" type="number" inputmode="decimal" min="0.5" max="4" step="0.05" value="1.5"><b>×</b></span></label>
+        <label><span>Days to finish</span><input id="goal-days" type="number" inputmode="numeric" min="1" max="365" value="14"></label>
+      </div>
+      <div class="result" aria-live="polite"><span>Listen each day</span><output id="daily-goal" for="goal-hours goal-minutes goal-speed goal-days">40 min</output><p id="goal-summary">9h 20m of listening across 14 days</p></div>
+    </form>
+  </main>
+  <footer>Powered by <a href="https://booktrace.app/audiobook-goal-calculator/" target="_blank" rel="noopener">Booktrace</a></footer>
+  <script src="embed.js"></script>
+</body>
+</html>
