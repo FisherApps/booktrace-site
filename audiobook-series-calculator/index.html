@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#161419">
+  <title>Audiobook Series Length Calculator | How Long to Finish | Booktrace</title>
+  <meta name="description" content="Add up every book in a series or box set to see total runtime, adjusted listening time at your speed, and the date you'll finish at your daily pace.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://booktrace.app/audiobook-series-calculator/">
+  <meta name="apple-itunes-app" content="app-id=6800459830, app-argument=https://booktrace.app/audiobook-series-calculator/">
+  <meta property="og:site_name" content="Booktrace">
+  <meta property="og:title" content="Audiobook Series Length Calculator | How Long to Finish | Booktrace">
+  <meta property="og:description" content="Add up a whole series to see total runtime, adjusted listening time, and the date you'll finish.">
+  <meta property="og:url" content="https://booktrace.app/audiobook-series-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://booktrace.app/assets/og-booktrace.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Booktrace audiobook tools">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Audiobook Series Length Calculator | How Long to Finish | Booktrace">
+  <meta name="twitter:description" content="See total runtime and your finish date for a whole audiobook series.">
+  <meta name="twitter:image" content="https://booktrace.app/assets/og-booktrace.png">
+  <link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/app-icon.png">
+  <link rel="stylesheet" href="../style.css">
+  <script src="/analytics.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Audiobook Series Length Calculator",
+        "url": "https://booktrace.app/audiobook-series-calculator/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "description": "A calculator that adds up every book in an audiobook series to find total runtime, speed-adjusted listening time, and an estimated finish date.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How do I calculate the total time for an audiobook series?", "acceptedAnswer": { "@type": "Answer", "text": "Add up the runtime of every book in the series, then divide by your playback speed to get total listening time." } },
+          { "@type": "Question", "name": "Does playback speed apply to the whole series at once?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, this calculator applies one speed across every book. If you plan to change speeds partway through, calculate the remaining books separately." } },
+          { "@type": "Question", "name": "Can I use this for a box set or omnibus?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Treat each disc, book, or part as one row and add as many as you need." } },
+          { "@type": "Question", "name": "How is the finish date calculated?", "acceptedAnswer": { "@type": "Answer", "text": "Total speed-adjusted listening time is divided by your daily minutes, rounded up to a whole number of days, then added to today's date." } }
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Booktrace", "item": "https://booktrace.app/"},
+      {"@type": "ListItem", "position": 2, "name": "Audiobook series calculator", "item": "https://booktrace.app/audiobook-series-calculator/"}
+    ]
+  }
+  </script>
+</head>
+<body class="home resource-page calculator-page">
+  <a class="skip-link" href="#main">Skip to calculator</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../" aria-label="Booktrace home"><span class="brand-mark" aria-hidden="true"><img src="../assets/mark.svg" alt=""></span><span>Booktrace</span></a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="../audiobook-goal-calculator/">Goal calculator</a>
+        <a href="../audiobook-narrator-tracker/">Narrators</a>
+        <a href="../audiobook-tools/">All tools</a>
+      </nav>
+      <a class="button button-small header-cta" href="https://apps.apple.com/app/id6800459830">Download</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="resource-hero shell calculator-hero">
+      <div class="resource-copy">
+        <p class="breadcrumbs"><a href="../">Booktrace</a><span>/</span>Series calculator</p>
+        <p class="eyebrow amber">Free listening tool</p>
+        <h1>How long will this series take to finish?</h1>
+        <p class="resource-lede">Add each book's runtime, set your playback speed and daily listening time, and see the total hours and the date you'll finish the whole series.</p>
+        <p class="calculator-supporting-copy">Use the runtimes shown in Audible, Libby, Spotify, Apple Books, or another audiobook app for each book in the series.</p>
+      </div>
+
+      <form class="calculator-card" id="series-calculator">
+        <fieldset>
+          <legend>Books in the series</legend>
+          <div class="series-rows" id="series-rows">
+            <div class="series-row"><span>Book 1</span><label><span>Hours</span><input class="series-hours" type="number" inputmode="numeric" min="0" max="999" value="10"></label><label><span>Minutes</span><input class="series-minutes" type="number" inputmode="numeric" min="0" max="59" value="0"></label><button type="button" class="series-remove" aria-label="Remove this book">&times;</button></div>
+            <div class="series-row"><span>Book 2</span><label><span>Hours</span><input class="series-hours" type="number" inputmode="numeric" min="0" max="999" value="12"></label><label><span>Minutes</span><input class="series-minutes" type="number" inputmode="numeric" min="0" max="59" value="0"></label><button type="button" class="series-remove" aria-label="Remove this book">&times;</button></div>
+            <div class="series-row"><span>Book 3</span><label><span>Hours</span><input class="series-hours" type="number" inputmode="numeric" min="0" max="999" value="14"></label><label><span>Minutes</span><input class="series-minutes" type="number" inputmode="numeric" min="0" max="59" value="0"></label><button type="button" class="series-remove" aria-label="Remove this book">&times;</button></div>
+          </div>
+          <button type="button" class="button button-small series-add-row" id="series-add">+ Add another book</button>
+        </fieldset>
+        <div class="goal-options">
+          <label><span>Playback speed</span><span class="speed-input"><input id="series-speed" type="number" inputmode="decimal" min="0.5" max="4" step="0.05" value="1.5"><b>&times;</b></span></label>
+          <label><span>Minutes per day</span><input id="series-daily" type="number" inputmode="numeric" min="1" max="600" value="45"></label>
+        </div>
+        <div class="calculation-result goal-result" aria-live="polite"><p>Total listening time</p><output id="series-total">24h</output><span id="series-summary">Across 3 books at 1.5× &mdash; finishes in 32 days</span></div>
+      </form>
+    </section>
+
+    <section class="resource-band">
+      <div class="shell resource-grid">
+        <article class="resource-prose">
+          <p class="eyebrow mint">The simple math</p>
+          <h2>Sum of runtimes ÷ speed ÷ daily minutes</h2>
+          <p>A trilogy of 10, 12, and 14 hours totals 36 hours. At 1.5× that's 24 hours of actual listening. At 45 minutes a day, that's 32 days &mdash; a real finish date, not just a page count.</p>
+          <p>Add or remove books as your list changes, and the total, listening time, and finish date update immediately.</p>
+        </article>
+        <div class="goal-rhythm" aria-label="Multi-book listening plan">
+          <span style="--h:50%"></span><span style="--h:66%"></span><span style="--h:78%"></span><span style="--h:45%"></span><span style="--h:60%"></span><span style="--h:84%"></span><span style="--h:52%"></span><span style="--h:70%"></span><span style="--h:58%"></span><span style="--h:90%"></span><span style="--h:47%"></span><span style="--h:64%"></span><span style="--h:74%"></span><span style="--h:56%"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="resource-feature shell">
+      <div class="resource-feature-copy">
+        <p class="eyebrow lilac">Beyond one calculation</p>
+        <h2>Keep the whole series together.</h2>
+        <p>Booktrace organizes finished books into collections, so a series stays in order with narrator, cover, and your listening history for each book, not just the box set total.</p>
+        <ul class="clean-list">
+          <li><span>Collections</span> that keep a series in order</li>
+          <li><span>Per-book history</span> of sessions and speed</li>
+          <li><span>One library</span> across every app you listen in</li>
+        </ul>
+        <a class="button button-primary resource-cta" href="https://apps.apple.com/app/id6800459830">Try Booktrace free</a>
+      </div>
+      <div class="resource-phone phone"><img src="../assets/bookshelf.webp" width="1320" height="2868" loading="lazy" alt="Booktrace bookshelf showing a series of audiobooks organized together"></div>
+    </section>
+
+    <section class="resource-faq shell">
+      <p class="eyebrow amber">Common questions</p>
+      <h2>Series and box sets, explained</h2>
+      <div class="faq-grid">
+        <article><h3>How do I calculate total time for a series?</h3><p>Add up every book's runtime, then divide by your playback speed to get total listening time.</p></article>
+        <article><h3>Does speed apply to the whole series?</h3><p>Yes, one speed applies across every book here. Calculate remaining books separately if your speed changes partway through.</p></article>
+        <article><h3>Can I use this for a box set?</h3><p>Yes. Treat each disc, book, or part as a row and add as many as you need.</p></article>
+        <article><h3>How is the finish date calculated?</h3><p>Total adjusted listening time divided by your daily minutes, rounded up to whole days, added to today.</p></article>
+      </div>
+    </section>
+
+    <section class="related-resources shell"><p class="eyebrow mint">More listening tools</p><h2>Plan the rest of the shelf.</h2><div class="related-grid"><a href="../audiobook-goal-calculator/"><span>Free calculator</span><strong>Daily listening goal</strong><p>Find the minutes per day needed to finish one book.</p></a><a href="../audiobook-speed-calculator/"><span>Free calculator</span><strong>Speed calculator</strong><p>See listening time at any playback speed.</p></a><a href="../audiobook-narrator-tracker/"><span>Follow</span><strong>Audiobook narrator tracker</strong><p>Keep track of the voices behind every series.</p></a><a href="../audiobook-tools/"><span>All tools</span><strong>Every free calculator</strong><p>Speed, goals, cost, and pace, all in one place.</p></a></div></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div><a class="brand" href="../"><span class="brand-mark" aria-hidden="true"><img src="../assets/mark.svg" alt=""></span><span>Booktrace</span></a><p>Built for hours, not pages.</p></div>
+      <nav aria-label="Footer navigation"><a href="../audiobook-tools/">Audiobook tools</a><a href="../audiobook-goal-calculator/">Listening goals</a><a href="../audiobook-narrator-tracker/">Narrators</a><a href="../about/">About</a><a href="../support.html">Support</a></nav>
+    </div>
+  </footer>
+  <script src="calculator.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#161419">
+  <title>Audiobook Cost Per Hour Calculator | Compare Value | Booktrace</title>
+  <meta name="description" content="Compare what two audiobooks, credits, or plans actually cost per hour of listening. Enter price and runtime to find the better value.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://booktrace.app/audiobook-cost-per-hour-calculator/">
+  <meta name="apple-itunes-app" content="app-id=6800459830, app-argument=https://booktrace.app/audiobook-cost-per-hour-calculator/">
+  <meta property="og:site_name" content="Booktrace">
+  <meta property="og:title" content="Audiobook Cost Per Hour Calculator | Compare Value | Booktrace">
+  <meta property="og:description" content="Enter price and runtime for two audiobooks to compare cost per listening hour.">
+  <meta property="og:url" content="https://booktrace.app/audiobook-cost-per-hour-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://booktrace.app/assets/og-booktrace.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Booktrace audiobook tools">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Audiobook Cost Per Hour Calculator | Compare Value | Booktrace">
+  <meta name="twitter:description" content="Compare cost per listening hour to find the better value.">
+  <meta name="twitter:image" content="https://booktrace.app/assets/og-booktrace.png">
+  <link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/app-icon.png">
+  <link rel="stylesheet" href="../style.css">
+  <script src="/analytics.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Audiobook Cost Per Hour Calculator",
+        "url": "https://booktrace.app/audiobook-cost-per-hour-calculator/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "description": "A calculator that compares two audiobooks, credits, or plans by cost per hour of listening.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How do I calculate audiobook cost per hour?", "acceptedAnswer": { "@type": "Answer", "text": "Divide the price paid by the runtime in hours." } },
+          { "@type": "Question", "name": "Why compare cost per hour instead of price alone?", "acceptedAnswer": { "@type": "Answer", "text": "A longer, pricier audiobook can cost less per hour than a shorter, cheaper one, so cost per hour is a fairer way to compare value." } },
+          { "@type": "Question", "name": "Can I compare a membership credit to buying a book?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Enter what the credit effectively costs you, such as monthly price divided by credits, as the price for that option." } },
+          { "@type": "Question", "name": "Does this account for playback speed?", "acceptedAnswer": { "@type": "Answer", "text": "No, it compares cost against the audiobook's published runtime, not your speed-adjusted listening time. Use a speed calculator alongside it for that." } }
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Booktrace", "item": "https://booktrace.app/"},
+      {"@type": "ListItem", "position": 2, "name": "Audiobook cost per hour calculator", "item": "https://booktrace.app/audiobook-cost-per-hour-calculator/"}
+    ]
+  }
+  </script>
+</head>
+<body class="home resource-page calculator-page">
+  <a class="skip-link" href="#main">Skip to calculator</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../" aria-label="Booktrace home"><span class="brand-mark" aria-hidden="true"><img src="../assets/mark.svg" alt=""></span><span>Booktrace</span></a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="../audiobook-credit-calculator/">Credit calculator</a>
+        <a href="../audiobook-listening-stats/">Listening stats</a>
+        <a href="../audiobook-tools/">All tools</a>
+      </nav>
+      <a class="button button-small header-cta" href="https://apps.apple.com/app/id6800459830">Download</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="resource-hero shell calculator-hero">
+      <div class="resource-copy">
+        <p class="breadcrumbs"><a href="../">Booktrace</a><span>/</span>Cost per hour calculator</p>
+        <p class="eyebrow amber">Free listening tool</p>
+        <h1>Which audiobook is the better deal?</h1>
+        <p class="resource-lede">Enter what you paid (or would pay) and the runtime for two audiobooks, credits, or plans. See the real cost per hour of listening for each.</p>
+        <p class="calculator-supporting-copy">Works for comparing two purchases, a credit against buying outright, or one service's pricing against another.</p>
+      </div>
+
+      <form class="calculator-card" id="cost-calculator">
+        <fieldset>
+          <legend>Option A</legend>
+          <div class="duration-inputs">
+            <label><span>Price ($)</span><input id="cost-a-price" type="number" inputmode="decimal" min="0" max="500" step="0.01" value="14.95"></label>
+            <label><span>Hours</span><input id="cost-a-hours" type="number" inputmode="numeric" min="0" max="999" value="10"></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Option B</legend>
+          <div class="duration-inputs">
+            <label><span>Price ($)</span><input id="cost-b-price" type="number" inputmode="decimal" min="0" max="500" step="0.01" value="24.99"></label>
+            <label><span>Hours</span><input id="cost-b-hours" type="number" inputmode="numeric" min="0" max="999" value="18"></label>
+          </div>
+        </fieldset>
+        <div class="calc-result-grid" aria-live="polite">
+          <div class="calculation-result"><p>Cost per hour &mdash; A</p><output id="cost-a-output">$1.50/hr</output></div>
+          <div class="calculation-result"><p>Cost per hour &mdash; B</p><output id="cost-b-output">$1.39/hr</output></div>
+        </div>
+        <p class="calc-verdict" id="cost-verdict">Option B is the better value &mdash; $0.11/hr cheaper.</p>
+      </form>
+    </section>
+
+    <section class="resource-band">
+      <div class="shell resource-grid">
+        <article class="resource-prose">
+          <p class="eyebrow mint">The simple math</p>
+          <h2>Price ÷ runtime in hours</h2>
+          <p>A $30, 25-hour audiobook costs $1.20 an hour. A $10, 3-hour audiobook costs $3.33 an hour. Price alone would suggest the shorter book is the deal &mdash; cost per hour says the opposite.</p>
+          <p>This compares published runtime, not your speed-adjusted listening time. Pair it with the speed calculator if you want value per hour you'll actually spend listening.</p>
+        </article>
+        <div class="speed-table-wrap">
+          <table class="speed-table">
+            <caption>Same price, different value</caption>
+            <thead><tr><th>Audiobook</th><th>Cost per hour</th></tr></thead>
+            <tbody>
+              <tr><td>$15 for 4 hours</td><td>$3.75/hr</td></tr>
+              <tr><td>$15 for 10 hours</td><td>$1.50/hr</td></tr>
+              <tr><td>$15 for 20 hours</td><td>$0.75/hr</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="resource-feature shell">
+      <div class="resource-feature-copy">
+        <p class="eyebrow lilac">Beyond one comparison</p>
+        <h2>See the hours you actually spent.</h2>
+        <p>Booktrace tracks listening time and sessions for every audiobook in your library, so you can see which books actually earned their place, not just which ones looked like a deal.</p>
+        <ul class="clean-list">
+          <li><span>Listening stats</span> across every book and month</li>
+          <li><span>Session history</span> for time actually spent</li>
+          <li><span>One library</span> across every audiobook app</li>
+        </ul>
+        <a class="button button-primary resource-cta" href="https://apps.apple.com/app/id6800459830">Try Booktrace free</a>
+      </div>
+      <div class="resource-phone phone"><img src="../assets/stats.webp" width="1320" height="2868" loading="lazy" alt="Booktrace listening statistics showing monthly listening time and session totals"></div>
+    </section>
+
+    <section class="resource-faq shell">
+      <p class="eyebrow amber">Common questions</p>
+      <h2>Cost per hour, explained</h2>
+      <div class="faq-grid">
+        <article><h3>How do I calculate cost per hour?</h3><p>Divide the price paid by the runtime in hours.</p></article>
+        <article><h3>Why not just compare price?</h3><p>A longer, pricier audiobook can cost less per hour than a shorter, cheaper one, so cost per hour is the fairer comparison.</p></article>
+        <article><h3>Can I compare a credit to buying a book?</h3><p>Yes. Enter what the credit effectively costs you &mdash; monthly price divided by credits &mdash; as the price for that option.</p></article>
+        <article><h3>Does this account for playback speed?</h3><p>No, it uses published runtime. Use the speed calculator alongside it for listening-time-adjusted value.</p></article>
+      </div>
+    </section>
+
+    <section class="related-resources shell"><p class="eyebrow mint">More listening tools</p><h2>See the whole picture.</h2><div class="related-grid"><a href="../audiobook-credit-calculator/"><span>Free calculator</span><strong>Credit value calculator</strong><p>Compare a membership against buying individually.</p></a><a href="../audiobook-speed-calculator/"><span>Free calculator</span><strong>Speed calculator</strong><p>See actual listening time at any speed.</p></a><a href="../audiobook-listening-stats/"><span>Listening history</span><strong>Stats and cover calendar</strong><p>See the time and stories behind every month.</p></a><a href="../audiobook-tools/"><span>All tools</span><strong>Every free calculator</strong><p>Speed, goals, cost, and pace, all in one place.</p></a></div></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div><a class="brand" href="../"><span class="brand-mark" aria-hidden="true"><img src="../assets/mark.svg" alt=""></span><span>Booktrace</span></a><p>Built for hours, not pages.</p></div>
+      <nav aria-label="Footer navigation"><a href="../audiobook-tools/">Audiobook tools</a><a href="../audiobook-credit-calculator/">Credit calculator</a><a href="../audiobook-listening-stats/">Listening stats</a><a href="../about/">About</a><a href="../support.html">Support</a></nav>
+    </div>
+  </footer>
+  <script src="calculator.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#161419">
+  <title>Audiobook Credit Value Calculator | Is a Membership Worth It | Booktrace</title>
+  <meta name="description" content="Use this audiobook credit calculator to compare a membership's credits against buying audiobooks individually. Find your real cost per book and monthly savings.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://booktrace.app/audiobook-credit-calculator/">
+  <meta name="apple-itunes-app" content="app-id=6800459830, app-argument=https://booktrace.app/audiobook-credit-calculator/">
+  <meta property="og:site_name" content="Booktrace">
+  <meta property="og:title" content="Audiobook Credit Value Calculator | Is a Membership Worth It | Booktrace">
+  <meta property="og:description" content="Compare a membership's credits against buying audiobooks individually to find your real cost per book.">
+  <meta property="og:url" content="https://booktrace.app/audiobook-credit-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://booktrace.app/assets/og-booktrace.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Booktrace audiobook tools">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Audiobook Credit Value Calculator | Is a Membership Worth It | Booktrace">
+  <meta name="twitter:description" content="Find your real cost per audiobook and see if a membership beats buying individually.">
+  <meta name="twitter:image" content="https://booktrace.app/assets/og-booktrace.png">
+  <link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/app-icon.png">
+  <link rel="stylesheet" href="../style.css">
+  <script src="/analytics.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Audiobook Credit Value Calculator",
+        "url": "https://booktrace.app/audiobook-credit-calculator/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "description": "A calculator that compares an audiobook membership's credits against buying audiobooks individually to find the real cost per book.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How do I know if an audiobook membership is worth it?", "acceptedAnswer": { "@type": "Answer", "text": "Compare the total monthly cost of the membership, including any extra purchases beyond your included credits, against the cost of buying every audiobook individually." } },
+          { "@type": "Question", "name": "What if I don't use all my credits?", "acceptedAnswer": { "@type": "Answer", "text": "Enter only the audiobooks you actually expect to finish this month. Unused credits carry no cash value in this calculator until you redeem them." } },
+          { "@type": "Question", "name": "Does this work for Audible, Chirp, or other services?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Enter any membership price and credit count. The calculator does not need to know which service you use." } },
+          { "@type": "Question", "name": "What if I buy extra audiobooks beyond my credits?", "acceptedAnswer": { "@type": "Answer", "text": "Add them to the audiobooks-used field. The calculator prices anything beyond your included credits at your individual purchase price." } }
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Booktrace", "item": "https://booktrace.app/"},
+      {"@type": "ListItem", "position": 2, "name": "Audiobook credit calculator", "item": "https://booktrace.app/audiobook-credit-calculator/"}
+    ]
+  }
+  </script>
+</head>
+<body class="home resource-page calculator-page">
+  <a class="skip-link" href="#main">Skip to calculator</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../" aria-label="Booktrace home"><span class="brand-mark" aria-hidden="true"><img src="../assets/mark.svg" alt=""></span><span>Booktrace</span></a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="../audiobook-speed-calculator/">Speed calculator</a>
+        <a href="../audiobook-cost-per-hour-calculator/">Cost per hour</a>
+        <a href="../audiobook-tools/">All tools</a>
+      </nav>
+      <a class="button button-small header-cta" href="https://apps.apple.com/app/id6800459830">Download</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="resource-hero shell calculator-hero">
+      <div class="resource-copy">
+        <p class="breadcrumbs"><a href="../">Booktrace</a><span>/</span>Credit calculator</p>
+        <p class="eyebrow amber">Free listening tool</p>
+        <h1>Is your audiobook membership worth it?</h1>
+        <p class="resource-lede">Enter your membership price, the credits it includes, and how many audiobooks you actually finish. See your real cost per audiobook next to buying them individually.</p>
+        <p class="calculator-supporting-copy">Works with any credit-based membership, including Audible and Chirp. This calculator does not connect to your account or check live pricing — enter your own numbers.</p>
+      </div>
+
+      <form class="calculator-card" id="credit-calculator">
+        <fieldset>
+          <legend>Your membership</legend>
+          <div class="duration-inputs">
+            <label><span>Price per month ($)</span><input id="credit-price" type="number" inputmode="decimal" min="0" max="500" step="0.01" value="14.95"></label>
+            <label><span>Credits included</span><input id="credit-count" type="number" inputmode="numeric" min="0" max="24" step="1" value="1"></label>
+          </div>
+        </fieldset>
+        <div class="goal-options">
+          <label><span>Audiobooks you'll use this month</span><input id="credit-books" type="number" inputmode="numeric" min="0" max="30" step="1" value="1"></label>
+          <label><span>Price if bought individually ($)</span><input id="credit-alt-price" type="number" inputmode="decimal" min="0" max="200" step="0.01" value="24.99"></label>
+        </div>
+        <div class="calc-result-grid" aria-live="polite">
+          <div class="calculation-result"><p>Cost per book (membership)</p><output id="credit-per-book">$14.95</output></div>
+          <div class="calculation-result"><p>Cost per book (buying)</p><output id="credit-alt-output">$24.99</output></div>
+        </div>
+        <p class="calc-verdict" id="credit-verdict">Membership saves $10.04 this month.</p>
+      </form>
+    </section>
+
+    <section class="resource-band">
+      <div class="shell resource-grid">
+        <article class="resource-prose">
+          <p class="eyebrow mint">The simple math</p>
+          <h2>Total monthly cost ÷ audiobooks used</h2>
+          <p>A membership only pays off compared with its included credits. Anything you listen to beyond those credits gets priced at your individual rate, and anything you skip does not count as a saving here.</p>
+          <p>If you regularly use fewer credits than you're charged for, buying individually — or borrowing from a library app — usually wins on a per-book basis.</p>
+        </article>
+        <div class="speed-table-wrap">
+          <table class="speed-table">
+            <caption>What changes the answer</caption>
+            <thead><tr><th>Input</th><th>Effect</th></tr></thead>
+            <tbody>
+              <tr><td>More credits used</td><td>Lowers cost per book</td></tr>
+              <tr><td>Fewer books finished</td><td>Raises cost per book</td></tr>
+              <tr><td>Higher individual price</td><td>Favors the membership</td></tr>
+              <tr><td>Extra books beyond credits</td><td>Priced at individual rate</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="resource-feature shell">
+      <div class="resource-feature-copy">
+        <p class="eyebrow lilac">Beyond the spreadsheet</p>
+        <h2>Once it's yours, keep it in one place.</h2>
+        <p>Booktrace doesn't track what you spend, but it does keep the book itself — narrator, chapters, sessions, and progress — together, no matter which app or credit paid for it.</p>
+        <ul class="clean-list">
+          <li><span>One library</span> across every audiobook app</li>
+          <li><span>Sessions and speed</span> remembered per book</li>
+          <li><span>Listening stats</span> that don't care where you bought it</li>
+        </ul>
+        <a class="button button-primary resource-cta" href="https://apps.apple.com/app/id6800459830">Try Booktrace free</a>
+      </div>
+      <div class="resource-phone phone"><img src="../assets/library.webp" width="1320" height="2868" loading="lazy" alt="Booktrace audiobook library with collections and finished books organized in one place"></div>
+    </section>
+
+    <section class="resource-faq shell">
+      <p class="eyebrow amber">Common questions</p>
+      <h2>Membership vs. buying, explained</h2>
+      <div class="faq-grid">
+        <article><h3>How do I know if a membership is worth it?</h3><p>Compare the total monthly cost — including anything bought beyond your credits — against buying every audiobook individually.</p></article>
+        <article><h3>What if I don't use all my credits?</h3><p>Enter only the audiobooks you expect to finish. Unused credits don't count as savings until you actually redeem them.</p></article>
+        <article><h3>Does this work for Audible, Chirp, or other services?</h3><p>Yes. Enter any membership price and credit count — it doesn't need to know which service you use.</p></article>
+        <article><h3>What about books bought beyond my credits?</h3><p>Add them to "audiobooks you'll use." They're priced at your individual rate automatically.</p></article>
+      </div>
+    </section>
+
+    <section class="related-resources shell"><p class="eyebrow mint">More listening tools</p><h2>Turn the numbers into a plan.</h2><div class="related-grid"><a href="../audiobook-cost-per-hour-calculator/"><span>Free calculator</span><strong>Cost per listening hour</strong><p>Compare the real value of two audiobooks or credits.</p></a><a href="../audiobook-series-calculator/"><span>Free calculator</span><strong>Series length calculator</strong><p>Add up a whole series and see when you'll finish.</p></a><a href="../audiobook-goal-calculator/"><span>Free calculator</span><strong>Daily listening goal</strong><p>Find the minutes per day needed to finish on time.</p></a><a href="../audiobook-tools/"><span>All tools</span><strong>Every free calculator</strong><p>Speed, goals, cost, and pace, all in one place.</p></a></div></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div><a class="brand" href="../"><span class="brand-mark" aria-hidden="true"><img src="../assets/mark.svg" alt=""></span><span>Booktrace</span></a><p>Built for hours, not pages.</p></div>
+      <nav aria-label="Footer navigation"><a href="../audiobook-tools/">Audiobook tools</a><a href="../audiobook-speed-calculator/">Speed calculator</a><a href="../audiobook-goal-calculator/">Listening goals</a><a href="../about/">About</a><a href="../support.html">Support</a></nav>
+    </div>
+  </footer>
+  <script src="calculator.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#161419">
+  <title>Audiobook Narrator Pace Calculator | Words Per Minute | Booktrace</title>
+  <meta name="description" content="Calculate a narrator's speaking pace in words per minute from any sample, then find the playback speed that matches how fast you like to listen.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://booktrace.app/audiobook-narrator-pace-calculator/">
+  <meta name="apple-itunes-app" content="app-id=6800459830, app-argument=https://booktrace.app/audiobook-narrator-pace-calculator/">
+  <meta property="og:site_name" content="Booktrace">
+  <meta property="og:title" content="Audiobook Narrator Pace Calculator | Words Per Minute | Booktrace">
+  <meta property="og:description" content="Find a narrator's words-per-minute pace and the playback speed that matches how you like to listen.">
+  <meta property="og:url" content="https://booktrace.app/audiobook-narrator-pace-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://booktrace.app/assets/og-booktrace.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Booktrace audiobook tools">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Audiobook Narrator Pace Calculator | Words Per Minute | Booktrace">
+  <meta name="twitter:description" content="Find a narrator's pace and the playback speed that matches you.">
+  <meta name="twitter:image" content="https://booktrace.app/assets/og-booktrace.png">
+  <link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/app-icon.png">
+  <link rel="stylesheet" href="../style.css">
+  <script src="/analytics.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Audiobook Narrator Pace Calculator",
+        "url": "https://booktrace.app/audiobook-narrator-pace-calculator/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "description": "A calculator that finds a narrator's speaking pace in words per minute from a sample clip and suggests a playback speed to match a preferred listening pace.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How do I find a narrator's words per minute?", "acceptedAnswer": { "@type": "Answer", "text": "Count or estimate the words spoken in a short clip, then divide by the clip's length in minutes." } },
+          { "@type": "Question", "name": "What is a normal audiobook narration speed?", "acceptedAnswer": { "@type": "Answer", "text": "Most professional narrators speak between 150 and 160 words per minute at normal, 1x playback." } },
+          { "@type": "Question", "name": "How do I use this to pick a playback speed?", "acceptedAnswer": { "@type": "Answer", "text": "Enter the pace you personally find comfortable, and the calculator suggests the playback speed that gets you there from this narrator's natural pace." } },
+          { "@type": "Question", "name": "Does narration speed vary by narrator?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, significantly. Some narrators read closer to 140 words per minute and others closer to 175, which is why the same playback speed can feel different from book to book." } }
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Booktrace", "item": "https://booktrace.app/"},
+      {"@type": "ListItem", "position": 2, "name": "Audiobook narrator pace calculator", "item": "https://booktrace.app/audiobook-narrator-pace-calculator/"}
+    ]
+  }
+  </script>
+</head>
+<body class="home resource-page calculator-page">
+  <a class="skip-link" href="#main">Skip to calculator</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../" aria-label="Booktrace home"><span class="brand-mark" aria-hidden="true"><img src="../assets/mark.svg" alt=""></span><span>Booktrace</span></a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="../audiobook-narrator-tracker/">Narrator tracker</a>
+        <a href="../audiobook-speed-calculator/">Speed calculator</a>
+        <a href="../audiobook-tools/">All tools</a>
+      </nav>
+      <a class="button button-small header-cta" href="https://apps.apple.com/app/id6800459830">Download</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="resource-hero shell calculator-hero">
+      <div class="resource-copy">
+        <p class="breadcrumbs"><a href="../">Booktrace</a><span>/</span>Narrator pace calculator</p>
+        <p class="eyebrow amber">Free listening tool</p>
+        <h1>How fast does this narrator actually talk?</h1>
+        <p class="resource-lede">Enter a short sample's length and word count to find the narrator's words-per-minute pace, then see the playback speed that matches your preferred listening pace.</p>
+        <p class="calculator-supporting-copy">Time any 30&ndash;60 second clip and count (or estimate) the words spoken in it. A rough word count works fine &mdash; this is a guide, not a transcript.</p>
+      </div>
+
+      <form class="calculator-card" id="pace-calculator">
+        <fieldset>
+          <legend>Sample clip</legend>
+          <div class="duration-inputs">
+            <label><span>Minutes</span><input id="pace-minutes" type="number" inputmode="numeric" min="0" max="60" value="1"></label>
+            <label><span>Seconds</span><input id="pace-seconds" type="number" inputmode="numeric" min="0" max="59" value="0"></label>
+          </div>
+          <label style="display:block;margin-top:14px"><span>Words spoken in that clip</span><input id="pace-words" type="number" inputmode="numeric" min="1" max="2000" value="155"></label>
+        </fieldset>
+        <div class="goal-options" style="grid-template-columns:1fr">
+          <label><span>Your preferred pace (words per minute)</span><input id="pace-target" type="number" inputmode="numeric" min="80" max="400" value="210"></label>
+        </div>
+        <p class="calc-hint">Most listeners land between 180 and 260 wpm at their usual playback speed.</p>
+        <div class="calculation-result" aria-live="polite"><p>Narrator's natural pace</p><output id="pace-wpm">155 wpm</output><span id="pace-suggestion">Play at 1.35× to reach your preferred 210 wpm</span></div>
+      </form>
+    </section>
+
+    <section class="resource-band">
+      <div class="shell resource-grid">
+        <article class="resource-prose">
+          <p class="eyebrow mint">The simple math</p>
+          <h2>Words ÷ clip length = words per minute</h2>
+          <p>A narrator speaking 155 words in one minute reads at 155 wpm. If you prefer listening around 210 wpm, playing that narrator at roughly 1.35× gets you there.</p>
+          <p>This is why the same playback speed can feel too slow for one narrator and too fast for another &mdash; their natural pace, not just your speed setting, sets the actual words per minute you hear.</p>
+        </article>
+        <div class="speed-table-wrap">
+          <table class="speed-table">
+            <caption>Typical narration pace at 1×</caption>
+            <thead><tr><th>Style</th><th>Words per minute</th></tr></thead>
+            <tbody>
+              <tr><td>Slower, deliberate</td><td>135&ndash;150</td></tr>
+              <tr><td>Typical narration</td><td>150&ndash;165</td></tr>
+              <tr><td>Brisk, energetic</td><td>165&ndash;180</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="resource-feature shell">
+      <div class="resource-feature-copy">
+        <p class="eyebrow lilac">Beyond one calculation</p>
+        <h2>Remember the speed for every narrator.</h2>
+        <p>Booktrace keeps the playback speed you settle on with each narrator, chapter progress, and your sessions together, so you're not re-guessing the right speed every time they start a new book.</p>
+        <ul class="clean-list">
+          <li><span>Per-narrator speed</span> remembered automatically</li>
+          <li><span>Narrator tracker</span> for every voice you follow</li>
+          <li><span>Session history</span> tied to the book and speed</li>
+        </ul>
+        <a class="button button-primary resource-cta" href="https://apps.apple.com/app/id6800459830">Try Booktrace free</a>
+      </div>
+      <div class="resource-phone phone"><img src="../assets/book-detail.webp" width="1320" height="2868" loading="lazy" alt="Booktrace showing a narrator, chapter progress, and playback speed for an audiobook"></div>
+    </section>
+
+    <section class="resource-faq shell">
+      <p class="eyebrow amber">Common questions</p>
+      <h2>Narration pace, explained</h2>
+      <div class="faq-grid">
+        <article><h3>How do I find a narrator's words per minute?</h3><p>Count or estimate the words spoken in a short clip, then divide by the clip's length in minutes.</p></article>
+        <article><h3>What is a normal narration speed?</h3><p>Most professional narrators speak between 150 and 160 words per minute at normal, 1× playback.</p></article>
+        <article><h3>How do I pick a playback speed from this?</h3><p>Enter the pace you find comfortable, and the calculator suggests the speed that reaches it from this narrator's natural pace.</p></article>
+        <article><h3>Does pace vary by narrator?</h3><p>Yes, significantly. Some read closer to 140 wpm and others closer to 175, which is why one playback speed doesn't fit every book.</p></article>
+      </div>
+    </section>
+
+    <section class="related-resources shell"><p class="eyebrow mint">More listening tools</p><h2>Match the speed to the voice.</h2><div class="related-grid"><a href="../audiobook-speed-calculator/"><span>Free calculator</span><strong>Speed calculator</strong><p>See listening time at any playback speed.</p></a><a href="../audiobook-narrator-tracker/"><span>Follow</span><strong>Audiobook narrator tracker</strong><p>Keep track of the voices you love.</p></a><a href="../audiobook-goal-calculator/"><span>Free calculator</span><strong>Daily listening goal</strong><p>Find the minutes per day needed to finish.</p></a><a href="../audiobook-tools/"><span>All tools</span><strong>Every free calculator</strong><p>Speed, goals, cost, and pace, all in one place.</p></a></div></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div><a class="brand" href="../"><span class="brand-mark" aria-hidden="true"><img src="../assets/mark.svg" alt=""></span><span>Booktrace</span></a><p>Built for hours, not pages.</p></div>
+      <nav aria-label="Footer navigation"><a href="../audiobook-tools/">Audiobook tools</a><a href="../audiobook-narrator-tracker/">Narrators</a><a href="../audiobook-speed-calculator/">Speed calculator</a><a href="../about/">About</a><a href="../support.html">Support</a></nav>
+    </div>
+  </footer>
+  <script src="calculator.js" defer></script>
+</body>
+</html>
