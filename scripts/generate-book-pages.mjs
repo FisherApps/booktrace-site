@@ -14,7 +14,11 @@ const books = raw.map(([title, author, h, m, series, narrator, genre]) => ({
 const seen = new Set();
 for (const b of books) { if (seen.has(b.slug)) throw new Error("dup slug " + b.slug); seen.add(b.slug); }
 
-const completeSeries = [{ key: "Harry Potter", name: "Harry Potter", slug: "harry-potter-series", author: "J.K. Rowling", count: 7, narrator: "Jim Dale" }];
+const completeSeries = [
+  { key: "Harry Potter", name: "Harry Potter", slug: "harry-potter-series", author: "J.K. Rowling", count: 7, narrator: "Jim Dale" },
+  { key: "The Hunger Games", name: "Hunger Games", slug: "hunger-games-series", author: "Suzanne Collins", count: 3, narrator: "Tatiana Maslany" },
+  { key: "The Lord of the Rings", name: "Lord of the Rings", slug: "lord-of-the-rings-series", author: "J.R.R. Tolkien", count: 3, narrator: "Rob Inglis" },
+];
 const seriesPages = completeSeries.map((c) => ({ ...c, list: books.filter((b) => b.series === c.key).sort((a, b) => raw.findIndex((r) => r[0] === a.title) - raw.findIndex((r) => r[0] === b.title)) }));
 for (const sp of seriesPages) if (sp.list.length !== sp.count) throw new Error("incomplete series " + sp.key);
 
