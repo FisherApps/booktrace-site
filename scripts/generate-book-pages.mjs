@@ -14,6 +14,10 @@ const books = raw.map(([title, author, h, m, series, narrator, genre]) => ({
 const seen = new Set();
 for (const b of books) { if (seen.has(b.slug)) throw new Error("dup slug " + b.slug); seen.add(b.slug); }
 
+const completeSeries = [{ key: "Harry Potter", name: "Harry Potter", slug: "harry-potter-series", author: "J.K. Rowling", count: 7, narrator: "Jim Dale" }];
+const seriesPages = completeSeries.map((c) => ({ ...c, list: books.filter((b) => b.series === c.key).sort((a, b) => raw.findIndex((r) => r[0] === a.title) - raw.findIndex((r) => r[0] === b.title)) }));
+for (const sp of seriesPages) if (sp.list.length !== sp.count) throw new Error("incomplete series " + sp.key);
+
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const jsonEsc = (s) => JSON.stringify(s);
 const fmt = (mins) => {
@@ -224,6 +228,7 @@ ${faqs.map(([q, a]) => `        <article><h3>${esc(q)}</h3><p>${esc(a)}</p></art
 
     <section class="related-resources shell"><p class="eyebrow mint">Keep browsing</p><h2>Other audiobook lengths.</h2><div class="related-grid">
 ${related.map((r) => `<a href="../${r.slug}/"><span>${esc(r.genre)}</span><strong>${esc(r.title)}</strong><p>About ${esc(fmt(r.mins))} &middot; ${esc(r.author)}</p></a>`).join("\n")}
+${seriesPages.filter((sp) => sp.key === b.series).map((sp) => `<a href="../${sp.slug}/"><span>Series total</span><strong>All ${sp.count} ${esc(sp.name)} audiobooks</strong><p>About ${esc(fmt(sp.list.reduce((a, x) => a + x.mins, 0)))} in total</p></a>`).join("\n")}
 <a href="../"><span>Hub</span><strong>All audiobook lengths</strong><p>Browse ${books.length} popular audiobooks by runtime.</p></a></div></section>
   </main>
 ` + foot(depth);
@@ -263,6 +268,9 @@ ${list.map((b) => `<a href="${b.slug}/"><span>${esc(b.genre)}</span><strong>${es
         <p class="calculator-supporting-copy">Lengths are approximate and vary slightly by edition. For any book not listed, use the <a href="${depth}audiobook-speed-calculator/">speed calculator</a> or <a href="${depth}audiobook-goal-calculator/">goal calculator</a> with the runtime from your app.</p>
       </div>
     </section>
+    <section class="related-resources shell"><p class="eyebrow mint">Series totals</p><h2>Whole series at once</h2><div class="related-grid">
+${seriesPages.map((sp) => `<a href="${sp.slug}/"><span>${sp.count} books</span><strong>${esc(sp.name)} audiobooks</strong><p>About ${esc(fmt(sp.list.reduce((a, x) => a + x.mins, 0)))} total</p></a>`).join("\n")}
+</div></section>
 ${sections}
     <section class="resource-feature shell">
       <div class="resource-feature-copy">
@@ -284,10 +292,87 @@ for (const b of books) {
   await writeFile(`${root}audiobook-length/${b.slug}/index.html`, bookPage(b));
 }
 
+
+// Series total pages, only for series whose every book is in the dataset
+function seriesPage(sp) {
+  const depth = "../../";
+  const path = `/audiobook-length/${sp.slug}/`;
+  const total = sp.list.reduce((a, b) => a + b.mins, 0);
+  const title = `How Long Are the ${sp.name} Audiobooks? ${fmt(total)} Total | Booktrace`;
+  const desc = `All ${sp.count} ${sp.name} audiobooks total about ${fmtLong(total)} as read by ${sp.narrator}. See each book's length, time at faster speeds, and days to finish the whole series.`;
+  const faqs = [
+    [`How long are all the ${sp.name} audiobooks?`, `All ${sp.count} ${sp.name} audiobooks in the ${sp.narrator} recording total about ${fmtLong(total)} at normal speed.`],
+    [`How long does it take to listen to the whole ${sp.name} series at 1.5x?`, `At 1.5x speed the full series takes about ${fmtLong(total / 1.5)}. At 2x it takes about ${fmtLong(total / 2)}.`],
+    [`How many days to finish the ${sp.name} audiobook series?`, `At one hour a day and normal speed it takes about ${dayWord(days(total, 1, 60))}. At 1.5x and an hour a day, about ${dayWord(days(total, 1.5, 60))}.`],
+    [`Which ${sp.name} audiobook is the longest?`, `${[...sp.list].sort((a, b) => b.mins - a.mins)[0].title} is the longest at about ${fmtLong([...sp.list].sort((a, b) => b.mins - a.mins)[0].mins)}. ${[...sp.list].sort((a, b) => a.mins - b.mins)[0].title} is the shortest at about ${fmtLong([...sp.list].sort((a, b) => a.mins - b.mins)[0].mins)}.`],
+  ];
+  const ld = [
+    { "@type": "WebPage", "@id": `${SITE}${path}#page`, name: title, url: SITE + path, description: desc, isPartOf: { "@id": `${SITE}/#website` }, dateModified: LASTMOD },
+    { "@type": "FAQPage", mainEntity: faqs.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) },
+  ];
+  const bookRows = sp.list.map((b, i) => `<tr><td>${i + 1}. <a href="../${b.slug}/">${esc(b.title)}</a></td><td style="text-align:right">${fmt(b.mins)}</td></tr>`).join("");
+  const speedRows = speeds.map((x) => `<tr><td>${x}&times;</td><td>${fmt(total / x)}</td></tr>`).join("");
+  const dayHeaders = dailies.map((d) => `<th scope="col">${d >= 60 ? d / 60 + " hr" : d + " min"}</th>`).join("");
+  const dayRows = [1, 1.25, 1.5, 2].map((x) => `<tr><th scope="row">${x}&times;</th>${dailies.map((d) => `<td>${days(total, x, d)}</td>`).join("")}</tr>`).join("");
+  return head({ title, desc, path, ogTitle: `How long are the ${sp.name} audiobooks? ${fmt(total)} total`, ld, depth,
+    crumbs: [["Booktrace", SITE + "/"], ["Audiobook lengths", SITE + "/audiobook-length/"], [`${sp.name} series`, SITE + path]] }) + `
+  <main id="main">
+    <section class="resource-hero shell">
+      <div class="resource-copy">
+        <p class="breadcrumbs"><a href="${depth}">Booktrace</a><span>/</span><a href="../">Audiobook lengths</a><span>/</span>${esc(sp.name)} series</p>
+        <p class="eyebrow amber">Series total &middot; ${sp.count} audiobooks</p>
+        <h1>How long are the ${esc(sp.name)} audiobooks?</h1>
+        <p class="resource-lede">All ${sp.count} ${esc(sp.name)} audiobooks by ${esc(sp.author)}, read by ${esc(sp.narrator)}, total about <strong>${esc(fmtLong(total))}</strong> at normal speed. At 1.5&times; that's about ${esc(fmt(total / 1.5))}.</p>
+        <p class="calculator-supporting-copy">Runtimes are approximate and vary slightly by edition. Use the <a href="${depth}audiobook-series-calculator/">series length calculator</a> with the lengths from your own app for an exact finish date.</p>
+      </div>
+      <div class="speed-table-wrap">
+        <table class="speed-table">
+          <caption>Length of each ${esc(sp.name)} audiobook</caption>
+          <tbody>${bookRows}<tr><td><strong>Total</strong></td><td style="text-align:right"><strong>${fmt(total)}</strong></td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="resource-band">
+      <div class="shell resource-grid">
+        <article class="resource-prose">
+          <p class="eyebrow mint">Whole series</p>
+          <h2>Total listening time by speed</h2>
+          <div class="speed-table-wrap" style="margin-top:20px"><table class="speed-table"><caption>Full series at each playback speed</caption><thead><tr><th scope="col">Speed</th><th scope="col" style="text-align:right">Total time</th></tr></thead><tbody>${speedRows}</tbody></table></div>
+        </article>
+        <article class="resource-prose">
+          <p class="eyebrow lilac">Plan it</p>
+          <h2>Days to finish the series</h2>
+          <div class="table-scroll" style="margin-top:20px"><table class="speed-table"><caption>Whole days by speed and daily listening time</caption><thead><tr><th scope="col">Speed</th>${dayHeaders}</tr></thead><tbody>${dayRows}</tbody></table></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="resource-faq shell">
+      <p class="eyebrow amber">Common questions</p>
+      <h2>${esc(sp.name)} audiobook series length, answered</h2>
+      <div class="faq-grid">
+${faqs.map(([q, a]) => `        <article><h3>${esc(q)}</h3><p>${esc(a)}</p></article>`).join("\n")}
+      </div>
+    </section>
+
+    <section class="related-resources shell"><p class="eyebrow mint">Keep going</p><h2>Track the whole series.</h2><div class="related-grid">
+<a href="${depth}audiobook-series-calculator/"><span>Free calculator</span><strong>Series length calculator</strong><p>Add your own books and get a finish date.</p></a>
+<a href="${depth}audiobook-goal-calculator/"><span>Free calculator</span><strong>Listening goal calculator</strong><p>Find the minutes per day to hit a deadline.</p></a>
+<a href="${APP}"><span>App</span><strong>Booktrace for iPhone</strong><p>Track sessions, speed and progress across every app.</p></a>
+<a href="../"><span>Hub</span><strong>All audiobook lengths</strong><p>Browse ${books.length} popular audiobooks by runtime.</p></a></div></section>
+  </main>
+` + foot(depth);
+}
+for (const sp of seriesPages) {
+  await mkdir(`${root}audiobook-length/${sp.slug}`, { recursive: true });
+  await writeFile(`${root}audiobook-length/${sp.slug}/index.html`, seriesPage(sp));
+}
+
 // Sitemap: replace any previous generated block
 let sm = await readFile(`${root}sitemap.xml`, "utf8");
 sm = sm.replace(/\s*<url>\s*<loc>https:\/\/booktrace\.app\/audiobook-length\/[^<]*<\/loc>[\s\S]*?<\/url>/g, "");
-const urls = ["/audiobook-length/", ...books.map((b) => `/audiobook-length/${b.slug}/`)];
+const urls = ["/audiobook-length/", ...seriesPages.map((sp) => `/audiobook-length/${sp.slug}/`), ...books.map((b) => `/audiobook-length/${b.slug}/`)];
 const block = urls.map((u) => `  <url>\n    <loc>${SITE}${u}</loc>\n    <lastmod>${LASTMOD}</lastmod>\n  </url>\n`).join("");
 sm = sm.replace("</urlset>", block + "</urlset>");
 await writeFile(`${root}sitemap.xml`, sm);
