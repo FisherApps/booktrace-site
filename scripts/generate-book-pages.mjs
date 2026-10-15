@@ -123,7 +123,7 @@ ${JSON.stringify({
 const foot = (depth) => `
   <footer class="site-footer">
     <div class="shell footer-inner">
-      <div><a class="brand" href="${depth}"><span class="brand-mark" aria-hidden="true"><img src="${depth}assets/mark.svg" alt=""></span><span>Booktrace</span></a><p>Built for hours, not pages.</p></div>
+      <div><a class="brand" href="${depth}"><span class="brand-mark" aria-hidden="true"><img src="${depth}assets/mark.svg" alt=""></span><span>Booktrace</span></a><p>Pages or hours. Every book counts.</p></div>
       <nav aria-label="Footer navigation"><a href="${depth}audiobook-length/">Audiobook lengths</a><a href="${depth}audiobook-tools/">Audiobook tools</a><a href="${depth}audiobook-goal-calculator/">Listening goals</a><a href="${depth}about/">About</a><a href="${depth}support.html">Support</a></nav>
     </div>
   </footer>
@@ -211,7 +211,7 @@ function bookPage(b) {
       <div class="resource-feature-copy">
         <p class="eyebrow lilac">Track it as you listen</p>
         <h2>Know exactly how far along you are.</h2>
-        <p>Booktrace is an iPhone audiobook tracker that logs your sessions, chapters, narrator and playback speed in one place, so you can see real progress through ${esc(b.title)} and how many hours remain, whichever app you listen in.</p>
+        <p>Booktrace is an iPhone book and audiobook tracker. It logs your sessions, chapters, narrator and playback speed, so you can see real progress through ${esc(b.title)} and how many hours remain, whichever app you listen in. Reading it in print or as an ebook instead? Booktrace tracks that by page, in the same library.</p>
         <ul class="clean-list">
           <li><span>Time remaining</span> at your own speed</li>
           <li><span>Sessions and chapters</span> logged as you listen</li>
@@ -280,10 +280,10 @@ ${sections}
       <div class="resource-feature-copy">
         <p class="eyebrow lilac">Beyond the runtime</p>
         <h2>Track what you actually listen to.</h2>
-        <p>Booktrace is an iPhone audiobook tracker that records sessions, chapters, narrators and speed across every app you listen in.</p>
+        <p>Booktrace is an iPhone tracker for audiobooks, print books and ebooks. It records sessions, chapters, narrators and speed across every app you listen in, and tracks print and ebooks by page in the same library.</p>
         <a class="button button-primary resource-cta" href="${APP}">Try Booktrace free</a>
       </div>
-      <div class="resource-phone phone"><img src="${depth}assets/bookshelf.webp" width="1320" height="2868" loading="lazy" alt="Booktrace bookshelf of tracked audiobooks"></div>
+      <div class="resource-phone phone"><img src="${depth}assets/bookshelf.webp" width="1320" height="2868" loading="lazy" alt="Booktrace bookshelf of tracked books and audiobooks"></div>
     </section>
   </main>
 ` + foot(depth);
@@ -363,7 +363,7 @@ ${faqs.map(([q, a]) => `        <article><h3>${esc(q)}</h3><p>${esc(a)}</p></art
     <section class="related-resources shell"><p class="eyebrow mint">Keep going</p><h2>Track the whole series.</h2><div class="related-grid">
 <a href="${depth}audiobook-series-calculator/"><span>Free calculator</span><strong>Series length calculator</strong><p>Add your own books and get a finish date.</p></a>
 <a href="${depth}audiobook-goal-calculator/"><span>Free calculator</span><strong>Listening goal calculator</strong><p>Find the minutes per day to hit a deadline.</p></a>
-<a href="${APP}"><span>App</span><strong>Booktrace for iPhone</strong><p>Track sessions, speed and progress across every app.</p></a>
+<a href="${APP}"><span>App</span><strong>Booktrace for iPhone</strong><p>Track audiobooks, print and ebooks in one library.</p></a>
 <a href="../"><span>Hub</span><strong>All audiobook lengths</strong><p>Browse ${books.length} popular audiobooks by runtime.</p></a></div></section>
   </main>
 ` + foot(depth);

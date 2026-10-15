@@ -1003,3 +1003,5 @@ th, td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; vertica
 }
 
 :focus-visible { outline: 3px solid var(--mint); outline-offset: 4px; }
+
+.difference.formats { background: transparent; border-top: 0; }

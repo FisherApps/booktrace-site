@@ -1,10 +1,10 @@
 # Booktrace
 
-> Booktrace is an audiobook-first tracker for iPhone. It records chapters, narrators, playback speed, actual listening sessions, time remaining, notes, ratings, shelves, and listening statistics. Print books and ebooks can be tracked in the same library.
+> Booktrace is a book tracker for iPhone that works equally for print books, ebooks, and audiobooks. Print books and ebooks are tracked by page (page counts fill in automatically); audiobooks are tracked by chapter, runtime, narrator, and playback speed. Every format gets reading and listening sessions, time remaining, notes, ratings, shelves, goals (including pages goals), and statistics in one library.
 
-Booktrace is a companion tracker, not an audiobook player. People continue listening in Audible, Libby, Spotify, Apple Books, Everand, or another player and manually keep one listening history in Booktrace. It does not connect to or import private listening-service histories.
+Booktrace is a companion tracker, not an ebook reader or audiobook player. People keep reading on paper or in Kindle, Apple Books, or Libby, and keep listening in Audible, Spotify, Everand, or another player, then keep one reading history in Booktrace. Goodreads and Libby export files can be imported (shelves, ratings, finish dates, formats, and page counts). It does not sign in to or sync private accounts on those services.
 
-No Booktrace account is required. The listener's library, notes, and listening history stay on the iPhone. Optional spoiler-aware AI discussion sends the conversation and current reading position to an AI provider.
+No Booktrace account is required. The reader's library, notes, and reading history stay on the iPhone. Optional spoiler-aware AI discussion sends the conversation and current reading position to an AI provider.
 
 ## Primary links
 
