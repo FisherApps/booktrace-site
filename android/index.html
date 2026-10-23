@@ -99,8 +99,8 @@
 
   <section class="wait" id="wait" aria-live="polite">
     <div style="font-size:44px" id="waitIcon">⏳</div>
-    <div class="big" id="waitTitle">NOW WAIT<br>10 MINUTES</div>
-    <p id="waitLine">Google needs about 10 minutes to let you in after step 2.</p>
+    <div class="big" id="waitTitle">NOW WAIT<br>15 MINUTES</div>
+    <p id="waitLine">Google needs about 15 minutes to let you in after step 2.</p>
     <div class="clock" id="clock" hidden></div>
     <p class="small" id="waitSmall">Tap step 3 too early and you'll get an error page saying the URL wasn't found. That's normal. Just wait, then tap step 3 again.</p>
   </section>
@@ -109,7 +109,7 @@
     <div class="head"><div class="num"><span>3</span></div><h2>Install Booktrace</h2></div>
     <p>Tap the button, then tap <b>Install</b>.</p>
     <a class="btn" href="https://play.google.com/store/apps/details?id=com.brianfisher.bookapp.android" data-step="3">Install from Google Play</a>
-    <p class="tip">If you see <b>"We're sorry, the requested URL was not found on this server"</b>, Google just hasn't added you yet. That can take a little while. Wait 10 minutes and tap the button again. Still there after an hour? Open the Play Store, tap your photo, and check it's the same Google account you used in steps 1 and 2.</p>
+    <p class="tip">If you see <b>"We're sorry, the requested URL was not found on this server"</b>, Google just hasn't added you yet. That can take a little while. Wait 15 minutes and tap the button again. Still there after an hour? Open the Play Store, tap your photo, and check it's the same Google account you used in steps 1 and 2.</p>
     <div class="doneflag">That's it. Open Booktrace and enjoy.</div>
   </section>
 
@@ -146,7 +146,7 @@
     });
     if (!/Android/i.test(navigator.userAgent)) document.getElementById('desktop').classList.add('show');
     paint();
-    var WAIT = 10 * 60 * 1000;
+    var WAIT = 15 * 60 * 1000;
     function tick() {
       var box = document.getElementById('wait'), clock = document.getElementById('clock');
       if (!done.t2) return;
