@@ -45,6 +45,13 @@
     .tip { margin-top: 12px !important; margin-bottom: 0 !important; font-size: 15px; color: var(--muted) !important; }
     .doneflag { display: none; margin-top: 10px; color: var(--mint); font-weight: 700; font-size: 16px; text-align: center; }
     .step.done .doneflag { display: block; }
+    .wait { margin: 4px 0 18px; padding: 26px 20px; border-radius: 24px; text-align: center; background: #2b2417; border: 3px solid var(--amber); }
+    .wait .big { font: 800 40px/1.05 var(--body); color: var(--amber); margin: 6px 0 10px; letter-spacing: -0.5px; }
+    .wait .clock { font: 800 56px/1 var(--body); color: var(--bone); font-variant-numeric: tabular-nums; margin: 14px 0 6px; }
+    .wait p { margin: 0; color: var(--bone); font-size: 18px; }
+    .wait .small { color: var(--soft); font-size: 16px; margin-top: 12px; }
+    .wait.ready { background: #17302b; border-color: var(--mint); }
+    .wait.ready .big, .wait.ready .clock { color: var(--mint); }
     .after { margin-top: 28px; padding: 18px; border-radius: 18px; background: var(--panel); }
     .after h3 { margin: 0 0 6px; font-size: 19px; }
     .after p { margin: 0; color: var(--soft); }
@@ -90,6 +97,14 @@
     <div class="doneflag">Done? Last step ↓</div>
   </section>
 
+  <section class="wait" id="wait" aria-live="polite">
+    <div style="font-size:44px" id="waitIcon">⏳</div>
+    <div class="big" id="waitTitle">NOW WAIT<br>10 MINUTES</div>
+    <p id="waitLine">Google needs about 10 minutes to let you in after step 2.</p>
+    <div class="clock" id="clock" hidden></div>
+    <p class="small" id="waitSmall">Tap step 3 too early and you'll get an error page saying the URL wasn't found. That's normal. Just wait, then tap step 3 again.</p>
+  </section>
+
   <section class="step waiting" id="s3">
     <div class="head"><div class="num"><span>3</span></div><h2>Install Booktrace</h2></div>
     <p>Tap the button, then tap <b>Install</b>.</p>
@@ -124,12 +139,34 @@
     document.querySelectorAll('[data-step]').forEach(function (a) {
       a.addEventListener('click', function () {
         done[a.getAttribute('data-step')] = true;
+        if (a.getAttribute('data-step') === '2' && !done.t2) done.t2 = Date.now();
         try { localStorage.setItem(key, JSON.stringify(done)); } catch (_) {}
         setTimeout(paint, 400);
       });
     });
     if (!/Android/i.test(navigator.userAgent)) document.getElementById('desktop').classList.add('show');
     paint();
+    var WAIT = 10 * 60 * 1000;
+    function tick() {
+      var box = document.getElementById('wait'), clock = document.getElementById('clock');
+      if (!done.t2) return;
+      var left = done.t2 + WAIT - Date.now();
+      clock.hidden = false;
+      if (left > 0) {
+        var m = Math.floor(left / 60000), sec = Math.floor(left % 60000 / 1000);
+        clock.textContent = m + ':' + (sec < 10 ? '0' : '') + sec;
+        document.getElementById('waitLine').textContent = 'Keep this page open. Step 3 will be ready in:';
+      } else {
+        box.classList.add('ready');
+        document.getElementById('waitTitle').innerHTML = 'READY!<br>DO STEP 3';
+        clock.hidden = true;
+        document.getElementById('waitIcon').textContent = '✅';
+        document.getElementById('waitLine').textContent = 'Time to install. Still an error page? Wait 10 more minutes and try again.';
+        document.getElementById('waitSmall').hidden = true;
+      }
+    }
+    tick();
+    setInterval(tick, 1000);
   })();
 </script>
 </body>
