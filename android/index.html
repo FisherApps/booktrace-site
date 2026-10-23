@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#161419">
+  <title>Booktrace for Android | Get it free</title>
+  <meta name="description" content="Get Booktrace on Android, free, as one of the first testers. Three taps.">
+  <meta name="robots" content="noindex">
+  <meta property="og:title" content="Booktrace for Android: get it free">
+  <meta property="og:description" content="Be one of the first on Android. Three taps, about a minute.">
+  <meta property="og:image" content="https://booktrace.app/assets/og-booktrace.png">
+  <link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --night: #161419; --panel: #252229; --panel-2: #2d2931;
+      --bone: #f3efe9; --soft: #b8b1b4; --muted: #8d878c;
+      --amber: #edbd72; --mint: #8ed9cb; --line: rgba(243, 239, 233, 0.12);
+      --display: "Iowan Old Style", Baskerville, Georgia, "Times New Roman", serif;
+      --body: Roboto, "Avenir Next", Avenir, -apple-system, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--night); color: var(--bone); font: 18px/1.5 var(--body); -webkit-font-smoothing: antialiased; }
+    main { width: min(560px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 56px; }
+    .top { display: flex; align-items: center; gap: 14px; }
+    .top img { width: 60px; height: 60px; border-radius: 14px; }
+    h1 { font: 700 34px/1.1 var(--display); margin: 22px 0 8px; }
+    .lede { color: var(--soft); margin: 0 0 22px; }
+    .warn { background: var(--panel); border: 2px solid var(--amber); border-radius: 18px; padding: 16px 18px; margin-bottom: 26px; }
+    .warn strong { color: var(--amber); display: block; font-size: 19px; margin-bottom: 4px; }
+    .warn p { margin: 0; color: var(--bone); }
+    .warn small { display: block; color: var(--soft); margin-top: 8px; font-size: 15px; }
+    .step { background: var(--panel); border-radius: 22px; padding: 20px 18px 18px; margin-bottom: 14px; border: 1px solid var(--line); transition: opacity .2s; }
+    .step.waiting { opacity: .55; }
+    .head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    .num { flex: none; width: 38px; height: 38px; border-radius: 50%; background: var(--amber); color: var(--night); font-weight: 800; font-size: 20px; display: grid; place-items: center; }
+    .step.done .num { background: var(--mint); }
+    .step.done .num span { display: none; }
+    .step.done .num::after { content: "✓"; }
+    .head h2 { margin: 0; font-size: 22px; line-height: 1.2; }
+    .step p { margin: 0 0 14px; color: var(--soft); }
+    .step p b { color: var(--bone); }
+    .btn { display: block; text-align: center; text-decoration: none; background: var(--amber); color: var(--night); font-weight: 800; font-size: 20px; padding: 18px 16px; border-radius: 999px; }
+    .step.done .btn { background: var(--panel-2); color: var(--bone); border: 1px solid var(--line); }
+    .tip { margin-top: 12px !important; margin-bottom: 0 !important; font-size: 15px; color: var(--muted) !important; }
+    .doneflag { display: none; margin-top: 10px; color: var(--mint); font-weight: 700; font-size: 16px; text-align: center; }
+    .step.done .doneflag { display: block; }
+    .after { margin-top: 28px; padding: 18px; border-radius: 18px; background: var(--panel); }
+    .after h3 { margin: 0 0 6px; font-size: 19px; }
+    .after p { margin: 0; color: var(--soft); }
+    .stuck { margin-top: 18px; color: var(--soft); font-size: 16px; }
+    .stuck a { color: var(--amber); }
+    .desktop { display: none; background: var(--panel-2); border-radius: 14px; padding: 12px 16px; margin-bottom: 18px; font-size: 16px; color: var(--soft); }
+    .desktop.show { display: block; }
+    .iphone { margin-top: 26px; text-align: center; font-size: 15px; color: var(--muted); }
+    .iphone a { color: var(--soft); }
+  </style>
+</head>
+<body>
+<main>
+  <div class="top">
+    <img src="../assets/app-icon.png" alt="Booktrace">
+    <div><b>Booktrace</b><br><span style="color:var(--soft)">for Android</span></div>
+  </div>
+
+  <h1>Get Booktrace on Android, free</h1>
+  <p class="lede">You're one of the first on Android. It's free for you now, and it stays free after launch. Three taps, about a minute.</p>
+
+  <div class="desktop" id="desktop">Open this page <b>on your Android phone</b>. The steps only work there.</div>
+
+  <div class="warn">
+    <strong>One rule: use one Google account</strong>
+    <p>Use the same Google account for every step as the one in your Play Store.</p>
+    <small>Not sure which one that is? Open the Play Store and tap your photo in the top right.</small>
+  </div>
+
+  <section class="step" id="s1">
+    <div class="head"><div class="num"><span>1</span></div><h2>Join the tester list</h2></div>
+    <p>Tap the button, then tap <b>Join group</b>. Then come back to this page.</p>
+    <a class="btn" href="https://groups.google.com/g/booktrace-android-testers" target="_blank" rel="noopener" data-step="1">Join the tester list</a>
+    <p class="tip">A "no permission" message can flash up first. Wait a second and the Join group button appears.</p>
+    <div class="doneflag">Done? Go to step 2 ↓</div>
+  </section>
+
+  <section class="step waiting" id="s2">
+    <div class="head"><div class="num"><span>2</span></div><h2>Become a tester</h2></div>
+    <p>Tap the button, then tap <b>Become a tester</b>. Then come back here.</p>
+    <a class="btn" href="https://play.google.com/apps/testing/com.brianfisher.bookapp.android" target="_blank" rel="noopener" data-step="2">Become a tester</a>
+    <p class="tip">If it says the app isn't available, you're probably on a different Google account. Tap your photo at the top of that page and switch.</p>
+    <div class="doneflag">Done? Last step ↓</div>
+  </section>
+
+  <section class="step waiting" id="s3">
+    <div class="head"><div class="num"><span>3</span></div><h2>Install Booktrace</h2></div>
+    <p>Tap the button, then tap <b>Install</b>.</p>
+    <a class="btn" href="https://play.google.com/store/apps/details?id=com.brianfisher.bookapp.android" data-step="3">Install from Google Play</a>
+    <p class="tip">If Google Play says it can't find the app, wait 5 minutes and tap again. Google takes a moment to add you.</p>
+    <div class="doneflag">That's it. Open Booktrace and enjoy.</div>
+  </section>
+
+  <div class="after">
+    <h3>One small favour</h3>
+    <p>Keep it on your phone for two weeks. If anything breaks or feels off, tell me in the app under <b>You → Send feedback</b>. I read every message.</p>
+  </div>
+
+  <p class="stuck">Stuck on any step? Email <a href="mailto:brian@booktrace.app?subject=Android%20tester">brian@booktrace.app</a> with the Gmail address from your Play Store and I'll add you myself.</p>
+
+  <p class="iphone">On an iPhone? <a href="https://apps.apple.com/app/id6800459830">Get Booktrace on the App Store</a>.</p>
+</main>
+<script>
+  (function () {
+    var key = 'booktrace_android_steps';
+    var done = {};
+    try { done = JSON.parse(localStorage.getItem(key) || '{}'); } catch (_) {}
+    function paint() {
+      var next = 1;
+      while (done[next]) next++;
+      for (var i = 1; i <= 3; i++) {
+        var el = document.getElementById('s' + i);
+        el.classList.toggle('done', !!done[i]);
+        el.classList.toggle('waiting', !done[i] && i > next);
+      }
+    }
+    document.querySelectorAll('[data-step]').forEach(function (a) {
+      a.addEventListener('click', function () {
+        done[a.getAttribute('data-step')] = true;
+        try { localStorage.setItem(key, JSON.stringify(done)); } catch (_) {}
+        setTimeout(paint, 400);
+      });
+    });
+    if (!/Android/i.test(navigator.userAgent)) document.getElementById('desktop').classList.add('show');
+    paint();
+  })();
+</script>
+</body>
+</html>
