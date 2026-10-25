@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#161419">
-  <title>Booktrace for Android | Get it free</title>
-  <meta name="description" content="Get Booktrace on Android, free, as one of the first testers. Three taps.">
+  <title>Booktrace for Android</title>
+  <meta name="description" content="The Booktrace Android test is full. Coming to Google Play soon.">
   <meta name="robots" content="noindex">
-  <meta property="og:title" content="Booktrace for Android: get it free">
-  <meta property="og:description" content="Be one of the first on Android. Three taps, about a minute.">
+  <meta property="og:title" content="Booktrace for Android">
+  <meta property="og:description" content="The Android test is full. Coming to Google Play soon.">
   <meta property="og:image" content="https://booktrace.app/assets/og-booktrace.png">
   <link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
   <style>
@@ -70,104 +70,19 @@
     <div><b>Booktrace</b><br><span style="color:var(--soft)">for Android</span></div>
   </div>
 
-  <h1>Get Booktrace on Android, free</h1>
-  <p class="lede">You're one of the first on Android. It's free for you now, and it stays free after launch. Three taps, about a minute.</p>
+  <h1>The Android test is full</h1>
+  <p class="lede">Thank you to everyone who signed up. Booktrace is coming to Google Play for everyone soon.</p>
 
-  <div class="desktop" id="desktop">Open this page <b>on your Android phone</b>. The steps only work there.</div>
-
-  <div class="warn">
-    <strong>One rule: use one Google account</strong>
-    <p>Use the same Google account for every step as the one in your Play Store.</p>
-    <small>Not sure which one that is? Open the Play Store and tap your photo in the top right.</small>
-  </div>
-
-  <section class="step" id="s1">
-    <div class="head"><div class="num"><span>1</span></div><h2>Join the tester list</h2></div>
-    <p>Tap the button, then tap <b>Join group</b>. Then come back to this page.</p>
-    <a class="btn" href="https://groups.google.com/g/booktrace-android-testers" target="_blank" rel="noopener" data-step="1">Join the tester list</a>
-    <p class="tip">The page may say <b>"You don't have permission to view this content"</b> the whole time. That's fine. Look at the very top: next to <b>"Booktrace Android testers"</b> there's a <b>Join group</b> button. Tap it.</p>
-    <div class="doneflag">Done? Go to step 2 ↓</div>
+  <section class="step">
+    <div class="head"><div class="num"><span>✓</span></div><h2>Already joined?</h2></div>
+    <p>If you finished steps 1 and 2 before the test filled up, you're in. Install it from Google Play.</p>
+    <a class="btn" href="https://play.google.com/store/apps/details?id=com.brianfisher.bookapp.android">Install from Google Play</a>
+    <p class="tip">If you see <b>"We're sorry, the requested URL was not found on this server"</b>, Google hasn't added you yet. Wait 15 minutes and try again.</p>
   </section>
 
-  <section class="step waiting" id="s2">
-    <div class="head"><div class="num"><span>2</span></div><h2>Become a tester</h2></div>
-    <p>Tap the button, then tap <b>Become a tester</b>. Then come back here.</p>
-    <a class="btn" href="https://play.google.com/apps/testing/com.brianfisher.bookapp.android" target="_blank" rel="noopener" data-step="2">Become a tester</a>
-    <p class="tip">If it says the app isn't available, you're probably on a different Google account. Tap your photo at the top of that page and switch.</p>
-    <div class="doneflag">Done? Last step ↓</div>
-  </section>
-
-  <section class="wait" id="wait" aria-live="polite">
-    <div style="font-size:44px" id="waitIcon">⏳</div>
-    <div class="big" id="waitTitle">NOW WAIT<br>15 MINUTES</div>
-    <p id="waitLine">Google needs about 15 minutes to let you in after step 2.</p>
-    <div class="clock" id="clock" hidden></div>
-    <p class="small" id="waitSmall">Tap step 3 too early and you'll get an error page saying the URL wasn't found. That's normal. Just wait, then tap step 3 again.</p>
-  </section>
-
-  <section class="step waiting" id="s3">
-    <div class="head"><div class="num"><span>3</span></div><h2>Install Booktrace</h2></div>
-    <p>Tap the button, then tap <b>Install</b>.</p>
-    <a class="btn" href="https://play.google.com/store/apps/details?id=com.brianfisher.bookapp.android" data-step="3">Install from Google Play</a>
-    <p class="tip">If you see <b>"We're sorry, the requested URL was not found on this server"</b>, Google just hasn't added you yet. That can take a little while. Wait 15 minutes and tap the button again. Still there after an hour? Open the Play Store, tap your photo, and check it's the same Google account you used in steps 1 and 2.</p>
-    <div class="doneflag">That's it. Open Booktrace and enjoy.</div>
-  </section>
-
-  <div class="after">
-    <h3>One small favour</h3>
-    <p>Keep it on your phone for two weeks. If anything breaks or feels off, tell me in the app under <b>You → Send feedback</b>. I read every message.</p>
-  </div>
-
-  <p class="stuck">Stuck on any step? Email <a href="mailto:brian@booktrace.app?subject=Android%20tester">brian@booktrace.app</a> with the Gmail address from your Play Store and I'll add you myself.</p>
+  <p class="stuck">Questions? Email <a href="mailto:brian@booktrace.app?subject=Android%20tester">brian@booktrace.app</a>.</p>
 
   <p class="iphone">On an iPhone? <a href="https://apps.apple.com/app/id6800459830">Get Booktrace on the App Store</a>.</p>
 </main>
-<script>
-  (function () {
-    var key = 'booktrace_android_steps';
-    var done = {};
-    try { done = JSON.parse(localStorage.getItem(key) || '{}'); } catch (_) {}
-    function paint() {
-      var next = 1;
-      while (done[next]) next++;
-      for (var i = 1; i <= 3; i++) {
-        var el = document.getElementById('s' + i);
-        el.classList.toggle('done', !!done[i]);
-        el.classList.toggle('waiting', !done[i] && i > next);
-      }
-    }
-    document.querySelectorAll('[data-step]').forEach(function (a) {
-      a.addEventListener('click', function () {
-        done[a.getAttribute('data-step')] = true;
-        if (a.getAttribute('data-step') === '2' && !done.t2) done.t2 = Date.now();
-        try { localStorage.setItem(key, JSON.stringify(done)); } catch (_) {}
-        setTimeout(paint, 400);
-      });
-    });
-    if (!/Android/i.test(navigator.userAgent)) document.getElementById('desktop').classList.add('show');
-    paint();
-    var WAIT = 15 * 60 * 1000;
-    function tick() {
-      var box = document.getElementById('wait'), clock = document.getElementById('clock');
-      if (!done.t2) return;
-      var left = done.t2 + WAIT - Date.now();
-      clock.hidden = false;
-      if (left > 0) {
-        var m = Math.floor(left / 60000), sec = Math.floor(left % 60000 / 1000);
-        clock.textContent = m + ':' + (sec < 10 ? '0' : '') + sec;
-        document.getElementById('waitLine').textContent = 'Keep this page open. Step 3 will be ready in:';
-      } else {
-        box.classList.add('ready');
-        document.getElementById('waitTitle').innerHTML = 'READY!<br>DO STEP 3';
-        clock.hidden = true;
-        document.getElementById('waitIcon').textContent = '✅';
-        document.getElementById('waitLine').textContent = 'Time to install. Still an error page? Wait 10 more minutes and try again.';
-        document.getElementById('waitSmall').hidden = true;
-      }
-    }
-    tick();
-    setInterval(tick, 1000);
-  })();
-</script>
 </body>
 </html>
