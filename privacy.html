@@ -24,7 +24,7 @@
 </header>
 
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated 16 October 2026</p>
+<p class="updated">Last updated 5 November 2026</p>
 
 <p class="lede">Booktrace has no accounts, no login and no servers of our own. We
 cannot see who you are, and we do not want to.</p>
@@ -75,7 +75,7 @@ runtimes, chapter lists, credits and page counts.</p>
   <tr>
     <td><a href="https://openlibrary.org/privacy">Open Library</a></td>
     <td>The title and author of a print book or ebook in your library, to fetch
-    its page count.</td>
+    its page count, or the ISBN from a barcode you scan.</td>
   </tr>
 </table>
 </div>
@@ -152,15 +152,16 @@ States.</p>
       Answers to onboarding questions<br>
       Paywall and purchase outcomes<br>
       App version and operating system<br>
-      Crash reports (no personal data)
+      Crash reports (no personal data)<br>
+      A rough location (country and city) that PostHog estimates from your IP address
     </td>
     <td>
       Narrator names, or your ratings of books<br>
-      Anything you typed in chat or in notes<br>
+      Anything you typed in chat or in notes (except a chat reply you choose to report)<br>
       Your listening positions or history<br>
       Your name, email or phone number (except in feedback you choose to send)<br>
       Your device ID or advertising ID<br>
-      Anything you could be identified by
+      Your precise location
     </td>
   </tr>
 </table>
@@ -170,6 +171,24 @@ States.</p>
 derived from anything about you or your device, it is not shared with anyone,
 and deleting the app destroys it permanently. Reinstalling produces a new one
 that cannot be connected to the old one.</p>
+
+<h2>Reporting a chat reply</h2>
+<p>You can report an AI reply from inside the chat. If you do, the reply, the
+reason you picked, anything you add and the book's title are sent to us through
+PostHog so we can read it. Nothing is sent unless you press send.</p>
+
+<h2>Camera and photos on Android</h2>
+<p>The camera is only used when you choose to scan a book, and you can decline
+the permission. Spine and cover scans are read on your phone by Google's ML Kit:
+the images are not sent to us or to Google. The text read from them is used to
+search the book catalogues listed above. Barcode scanning uses Google's code
+scanner in Google Play services, which hands the app only the barcode's number.
+A spine photo you keep, or a photo you pick as your shelf wallpaper through the
+system photo picker, is stored on your device and not uploaded.</p>
+<p>ML Kit sends Google performance and diagnostic information, such as app
+version, device information, feature usage and a per-installation identifier,
+which Google uses to measure and debug the service. It does not include your
+images or the text read from them.</p>
 
 <h2>Notifications and Live Activities</h2>
 <p>If you allow notifications, they are scheduled and delivered by your own
