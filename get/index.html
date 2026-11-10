@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#161419">
+  <title>Get Booktrace</title>
+  <meta name="description" content="Get Booktrace on the App Store or Google Play.">
+  <meta property="og:title" content="Get Booktrace">
+  <meta property="og:description" content="Your bookshelf, on your home screen. On iPhone and Android.">
+  <meta property="og:image" content="https://booktrace.app/assets/og-booktrace.png">
+  <link rel="canonical" href="https://booktrace.app/get/">
+  <link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
+  <script>
+    // Send the visitor straight to their store. Runs before the page draws.
+    (function () {
+      var IOS_ID = '6800459830';
+      var ANDROID_ID = 'com.brianfisher.bookapp.android';
+      var APPLE = 'https://apps.apple.com/app/id' + IOS_ID;
+      var PLAY = 'https://play.google.com/store/apps/details?id=' + ANDROID_ID;
+      window.BOOKTRACE_STORES = { apple: APPLE, play: PLAY };
+
+      var ua = navigator.userAgent || '';
+      var params = new URLSearchParams(location.search);
+      if (params.has('stay')) return; // ?stay shows the page without redirecting (for checking it)
+
+      var isIOS = /iPhone|iPad|iPod/i.test(ua) ||
+        (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1); // iPadOS reports as a Mac
+      var isAndroid = /Android/i.test(ua);
+      // In-app browsers (TikTok, Instagram, Facebook, YouTube, Snapchat, Pinterest, Android WebViews).
+      var inApp = /musical_ly|BytedanceWebview|TikTok|trill|Instagram|FBAN|FBAV|FB_IAB|Snapchat|Pinterest|GSA\/|YouTube|; wv\)/i.test(ua) ||
+        (isIOS && !/Safari\//.test(ua));
+
+      function go(primary, fallback) {
+        if (!fallback) { location.replace(primary); return; }
+        // Try the store app's own link; if the page is still showing shortly after, use the web link.
+        var left = false;
+        function gone() { left = true; }
+        document.addEventListener('visibilitychange', function () { if (document.hidden) gone(); });
+        window.addEventListener('pagehide', gone);
+        window.addEventListener('blur', gone);
+        setTimeout(function () { if (!left) location.replace(fallback); }, 1200);
+        location.href = primary;
+      }
+
+      if (isIOS) {
+        go(inApp ? 'itms-apps://apps.apple.com/app/id' + IOS_ID : APPLE, inApp ? APPLE : null);
+      } else if (isAndroid) {
+        go(inApp ? 'market://details?id=' + ANDROID_ID : PLAY, inApp ? PLAY : null);
+      }
+      // Anything else (desktop) sees the page with both buttons.
+    })();
+  </script>
+  <style>
+    :root {
+      --night: #161419; --panel: #252229; --bone: #f3efe9; --soft: #b8b1b4;
+      --amber: #edbd72; --line: rgba(243, 239, 233, 0.12);
+      --display: "Iowan Old Style", Baskerville, Georgia, "Times New Roman", serif;
+      --body: -apple-system, BlinkMacSystemFont, Roboto, "Avenir Next", "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body { margin: 0; background: var(--night); color: var(--bone); font: 18px/1.5 var(--body); -webkit-font-smoothing: antialiased; }
+    main { min-height: 100%; width: min(440px, calc(100% - 32px)); margin: 0 auto; padding: 48px 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+    .icon { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 10px 30px rgba(0,0,0,.4); }
+    h1 { font: 700 34px/1.1 var(--display); margin: 22px 0 8px; }
+    p { color: var(--soft); margin: 0 0 28px; }
+    .btn { display: block; width: 100%; padding: 16px 20px; margin-bottom: 12px; border-radius: 16px; background: var(--panel); border: 1px solid var(--line); color: var(--bone); font-weight: 700; font-size: 18px; text-decoration: none; }
+    .btn.primary { background: var(--amber); border-color: var(--amber); color: var(--night); }
+    .more { margin-top: 18px; font-size: 15px; }
+    .more a { color: var(--soft); }
+  </style>
+</head>
+<body>
+  <main>
+    <img class="icon" src="../assets/app-icon.png" alt="Booktrace app icon" width="96" height="96">
+    <h1>Booktrace</h1>
+    <p>Your bookshelf, on your home screen.</p>
+    <a class="btn" id="apple" href="https://apps.apple.com/app/id6800459830">Download on the App Store</a>
+    <a class="btn" id="play" href="https://play.google.com/store/apps/details?id=com.brianfisher.bookapp.android">Get it on Google Play</a>
+    <div class="more"><a href="../">booktrace.app</a></div>
+  </main>
+  <script>
+    // If the redirect was blocked, put the visitor's own store first and highlight it.
+    (function () {
+      var ua = navigator.userAgent || '';
+      var android = /Android/i.test(ua);
+      var ios = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+      var mine = document.getElementById(android ? 'play' : 'apple');
+      if (android || ios) {
+        mine.classList.add('primary');
+        mine.parentNode.insertBefore(mine, document.getElementById(android ? 'apple' : 'play'));
+      }
+    })();
+  </script>
+</body>
+</html>
